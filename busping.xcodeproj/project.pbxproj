@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		372FF896456C7094481B60A7 /* Pods_busping.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42FA1266424FCA93F00882A9 /* Pods_busping.framework */; };
 		B228FF761D9AC86E004E157E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B228FF751D9AC86E004E157E /* AppDelegate.swift */; };
 		B228FF781D9AC86E004E157E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B228FF771D9AC86E004E157E /* ViewController.swift */; };
 		B228FF7B1D9AC86E004E157E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B228FF791D9AC86E004E157E /* Main.storyboard */; };
@@ -15,6 +16,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		42FA1266424FCA93F00882A9 /* Pods_busping.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_busping.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B93116794B699A9A28A4668 /* Pods-busping.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-busping.release.xcconfig"; path = "Pods/Target Support Files/Pods-busping/Pods-busping.release.xcconfig"; sourceTree = "<group>"; };
+		989F46A539567D0BCFD7A85C /* Pods-busping.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-busping.debug.xcconfig"; path = "Pods/Target Support Files/Pods-busping/Pods-busping.debug.xcconfig"; sourceTree = "<group>"; };
 		B228FF721D9AC86E004E157E /* busping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = busping.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B228FF751D9AC86E004E157E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B228FF771D9AC86E004E157E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				372FF896456C7094481B60A7 /* Pods_busping.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		400403E9566D9CAC9CB33B05 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				989F46A539567D0BCFD7A85C /* Pods-busping.debug.xcconfig */,
+				4B93116794B699A9A28A4668 /* Pods-busping.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		5684E428FF674839C36B13A9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				42FA1266424FCA93F00882A9 /* Pods_busping.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B228FF691D9AC86D004E157E = {
 			isa = PBXGroup;
 			children = (
 				B228FF741D9AC86E004E157E /* busping */,
 				B228FF731D9AC86E004E157E /* Products */,
+				400403E9566D9CAC9CB33B05 /* Pods */,
+				5684E428FF674839C36B13A9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B228FF841D9AC86E004E157E /* Build configuration list for PBXNativeTarget "busping" */;
 			buildPhases = (
+				DB92B49DF023C4A08617DB2B /* [CP] Check Pods Manifest.lock */,
 				B228FF6E1D9AC86D004E157E /* Sources */,
 				B228FF6F1D9AC86D004E157E /* Frameworks */,
 				B228FF701D9AC86D004E157E /* Resources */,
+				D6EA921197DD1332C4DBD1B3 /* [CP] Embed Pods Frameworks */,
+				73B2BA83B427D7E067690368 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -97,6 +124,7 @@
 					B228FF711D9AC86D004E157E = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 7K9KLB5QXN;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -131,6 +159,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		73B2BA83B427D7E067690368 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-busping/Pods-busping-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D6EA921197DD1332C4DBD1B3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-busping/Pods-busping-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DB92B49DF023C4A08617DB2B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B228FF6E1D9AC86D004E157E /* Sources */ = {
@@ -182,6 +258,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -232,6 +309,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -259,7 +337,9 @@
 		};
 		B228FF851D9AC86E004E157E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 989F46A539567D0BCFD7A85C /* Pods-busping.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7K9KLB5QXN;
 				INFOPLIST_FILE = busping/Info.plist;
@@ -272,7 +352,9 @@
 		};
 		B228FF861D9AC86E004E157E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4B93116794B699A9A28A4668 /* Pods-busping.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7K9KLB5QXN;
 				INFOPLIST_FILE = busping/Info.plist;
@@ -302,6 +384,7 @@
 				B228FF861D9AC86E004E157E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
