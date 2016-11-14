@@ -39,17 +39,29 @@ class ViewController: UIViewController, UITableViewDelegate {
     func cleanBusInfo (html: String) -> Void {
         if let doc = Kanna.HTML(html: html, encoding: String.Encoding.utf8) {
 
+            // *** Perhaps will have to combine the two following loops so all instances of busIcon and busStop are sequential. This is key to understanding the positioning of the bus in reference to the stop, and will ultimately allow us to report the live location of the bus. ***
+
+            for busIcon in doc.css("tr > td.balloonL > dl > dt > img") {
+                                print(busIcon["alt"])
+
+                            }
+
+            // Okay, trying to get parent tr (table row) class for each img found. Thus far I've confirmed that at least I'm going down the right path. Though my output is nil, there are 4 nil elements printing, which is exactly the same number of buses on the
+
 //            for busIcon in doc.css("td.balloonL > dl > dt > img") {
 //                print(busIcon["src"])
 //            }
 //            for busStop in doc.css("td.stopName > a") {
 //                print(busStop.text)
 //            }
-
-            for busStop in doc.css("tr") {
-                print(busStop.className)
-            }
+//             for busStop in doc.css("tr") {
+//                print(busStop.className)
+//            }
         }
+
+
+
+
     }
 
     override func didReceiveMemoryWarning() {
