@@ -1,5 +1,5 @@
 PODS:
-  - Alamofire (4.0.1)
+  - Alamofire (4.2.0)
   - Kanna (2.0.0)
 
 DEPENDENCIES:
@@ -7,7 +7,7 @@ DEPENDENCIES:
   - Kanna (~> 2.0.0)
 
 SPEC CHECKSUMS:
-  Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
   Kanna: 9a6637f72f5c77fe9c045b1efb2a5bb074754af8
 
 PODFILE CHECKSUM: 90979e69fdf9f7cf4782fc094840ece738f98bd0
