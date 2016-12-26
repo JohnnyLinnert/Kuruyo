@@ -18,7 +18,7 @@ class ViewController: UIViewController, UITableViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-         getBusInfo()
+        getBusInfo()
 
     }
 
@@ -39,52 +39,37 @@ class ViewController: UIViewController, UITableViewDelegate {
     func cleanBusInfo (html: String) -> Void {
         if let doc = Kanna.HTML(html: html, encoding: .utf8) {
 
-            // *** Perhaps will have to combine the two following loops so all instances of busActual and busStop are sequential. This is key to understanding the positioning of the bus in reference to the stop, and will ultimately allow us to report the live location of the bus. ***
-
 //            for busActual in doc.css("tr > td.balloonL > dl > dt > img") {
-//                                print(busActual["alt"])
-//
-//                            }
+//                if busActual["alt"] == "バス" {
+//                    print("bus")}
+//                else {
+//                   print("no bus")}
+//            }
 
-            // Okay, trying to get parent tr (table row) class for each img found. Thus far I've confirmed that at least I'm going down the right path. Though my output is nil, there are 4 nil elements printing, which is exactly the same number of buses on the
+            for busList in doc.css("tr.trEven > td.balloonL") {
+//                print(busList.innerHTML)
+
+                if busList.innerHTML == "\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t<dl class=\"clearfix\">\n\t\t\t\t\t\t\t\t\t<dt><img src=\"buslocation/images/PC_00.png\" style=\"max-width:40px; max-height:30px;\" alt=\"バス\"></dt>\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t<dd>恵比寿駅行 <em></em>\n</dd>\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t</dl>\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t" {
+                    print("bus")}
+                else {
+                    print("no bus")}
+            }
+
+
+
+
 
 //            for busIcon in doc.css("td.balloonL > dl > dt > img") {
 //                print(busIcon.content)
 //            }
-
-// This line only gets me the busIcon, but no significant useful data otherwise (e.g. which row is it on?)
-            for busToXML in doc.css("td.balloonL > dl > dt > img") {
-                print(busToXML.toXML)
-            }
-
-
-            for stuff in doc.xpath("//*[@id=\"SubmitForm\"]/table[1]/tbody/tr[5]/td[1]/dl/dt/img") {
-                print(stuff.parent)
-            }
-
-
-// Using the innerHTML of the class seems to pull out a solid list of strings here
-            for busStop in doc.css("td.stopName > a") {
-                print(busStop.innerHTML)
-            }
-
-//             for busStops in doc.css("tr") {
-//                print(busStops.toXML)
+//            for busStop in doc.css("td.stopName > a") {
+//                print(busStop.innerHTML)
 //            }
-
         }
-
-
-
-
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-                
-
-        }
-
     }
-
+}
