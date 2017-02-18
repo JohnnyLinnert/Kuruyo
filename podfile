@@ -4,5 +4,5 @@ use_frameworks!
 
 target 'busping' do
     pod 'Alamofire', '~> 4.0'
-    pod 'Kanna', '~> 2.0.0'
+    pod 'Kanna', '~> 2.1.0'
 end

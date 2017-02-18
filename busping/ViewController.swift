@@ -2,7 +2,8 @@
 //  ViewController.swift
 //  busping
 //
-//  Created by Johnny on 2016/09/28.
+//  Created by Johnny Linnert, beginning on 2016/09/28 
+//  With great help from Greg de Jonckheere and Jonathon Toon
 //  Copyright © 2016 Johnny Linnert. All rights reserved.
 //
 
@@ -10,66 +11,92 @@ import UIKit
 import Alamofire
 import Kanna
 
-
-class ViewController: UIViewController, UITableViewDelegate {
-
-
+class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        requestHTML() { [unowned self] rawMarkup in
+            let stops = self.getStops(rawMarkup)
 
-        getBusInfo()
+            for stop in stops {
+                print(stop.name)
+            }
 
+            print()
+            print()
+
+            for stop in stops.reversed() {
+                print(stop.name)
+            }
+
+            print()
+            print()
+
+            let buses = self.getBuses(rawMarkup)
+            for bus in buses {
+                if let stop = bus.leftStop {
+                    print(stop.name)
+                } else {
+                    print("Idling bus")
+                }
+            }
+        }
     }
 
-    func getBusInfo () -> Void {
-
+    func requestHTML(completed: @escaping (String) -> ()) {
         Alamofire.request("http://tokyu.bus-location.jp/blsys/navi?VID=rtl&EID=nt&PRM=&RAMK=116&SCT=1").response { response in
-            print("Request: \(response.request)")
-            print("Response: \(response.response)")
-            print("Error: \(response.data)")
-
             if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
-                print(utf8Text)
-                self.cleanBusInfo(html: utf8Text)
+                completed(utf8Text)
             }
         }
     }
 
-    func cleanBusInfo (html: String) -> Void {
-        if let doc = Kanna.HTML(html: html, encoding: .utf8) {
+    func getBuses(_ rawHTML: String) -> [Bus] {
+        var buses = [Bus]()
+        if let doc = Kanna.HTML(html: rawHTML, encoding: .utf8) {
 
-//            for busActual in doc.css("tr > td.balloonL > dl > dt > img") {
-//                if busActual["alt"] == "バス" {
-//                    print("bus")}
-//                else {
-//                   print("no bus")}
-//            }
+            var lastStop: Stop? = nil
 
-            for busList in doc.css("tr.trEven > td.balloonL") {
-//                print(busList.innerHTML)
+            for row in doc.css(".routeListTbl tr").reversed() {
 
-                if busList.innerHTML == "\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t<dl class=\"clearfix\">\n\t\t\t\t\t\t\t\t\t<dt><img src=\"buslocation/images/PC_00.png\" style=\"max-width:40px; max-height:30px;\" alt=\"バス\"></dt>\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t<dd>恵比寿駅行 <em></em>\n</dd>\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t</dl>\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t" {
-                    print("bus")}
-                else {
-                    print("no bus")}
+                if row.css(".stopName a").count > 0 {
+                    let stopName = row.css(".stopName a")[0].text
+                    lastStop = Stop(name: stopName ?? "No name")
+
+                } else if row.css(".balloonL img[src=buslocation/images/PC_00.png]").count > 0 {
+                    let bus = Bus(leftStop: lastStop)
+                    buses.append(bus)
+                }
+
+
             }
 
-
-
-
-
-//            for busIcon in doc.css("td.balloonL > dl > dt > img") {
-//                print(busIcon.content)
-//            }
-//            for busStop in doc.css("td.stopName > a") {
-//                print(busStop.innerHTML)
-//            }
         }
+        return buses
+    }
+
+
+    func getStops(_ rawHTML: String) -> [Stop] {
+        var stops = [Stop]()
+        if let doc = Kanna.HTML(html: rawHTML, encoding: .utf8) {
+            
+            for stopRow in doc.css(".routeListTbl .stopName a").reversed() {
+                let stop = Stop(name: stopRow.text ?? "No name")
+                stops.append(stop)
+            }
+            
+        }
+        return stops
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+    
+}
+
+
+struct Bus {
+    let leftStop: Stop?
+}
+
+struct Stop {
+    let name: String
 }
