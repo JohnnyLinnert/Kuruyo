@@ -2,7 +2,8 @@
 //  ViewController.swift
 //  busping
 //
-//  Created by Johnny on 2016/09/28.
+//  Created by Johnny Linnert, beginning on 2016/09/28 
+//  With great help from Greg de Jonckheere and Jonathon Toon
 //  Copyright © 2016 Johnny Linnert. All rights reserved.
 //
 
@@ -66,10 +67,14 @@ class ViewController: UIViewController {
                     let bus = Bus(leftStop: lastStop)
                     buses.append(bus)
                 }
+
+
             }
+
         }
         return buses
     }
+
 
     func getStops(_ rawHTML: String) -> [Stop] {
         var stops = [Stop]()
@@ -79,9 +84,12 @@ class ViewController: UIViewController {
                 let stop = Stop(name: stopRow.text ?? "No name")
                 stops.append(stop)
             }
+            
         }
         return stops
     }
+    
+    
 }
 
 
@@ -92,5 +100,3 @@ struct Bus {
 struct Stop {
     let name: String
 }
-
-
