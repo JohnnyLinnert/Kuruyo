@@ -1,10 +1,9 @@
-//
 //  ViewController.swift
 //  busping
 //
 //  Created by Johnny Linnert, beginning on 2016/09/28 
 //  With great help from Greg de Jonckheere and Jonathon Toon
-//  Copyright © 2016 Johnny Linnert. All rights reserved.
+//  Copyright © 2017 Johnny Linnert. All rights reserved.
 //
 
 import UIKit
