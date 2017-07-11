@@ -16,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		354B66F91F1438BE00473CA0 /* busping.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = busping.entitlements; sourceTree = "<group>"; };
 		42FA1266424FCA93F00882A9 /* Pods_busping.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_busping.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B93116794B699A9A28A4668 /* Pods-busping.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-busping.release.xcconfig"; path = "Pods/Target Support Files/Pods-busping/Pods-busping.release.xcconfig"; sourceTree = "<group>"; };
 		989F46A539567D0BCFD7A85C /* Pods-busping.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-busping.debug.xcconfig"; path = "Pods/Target Support Files/Pods-busping/Pods-busping.debug.xcconfig"; sourceTree = "<group>"; };
@@ -78,6 +79,7 @@
 		B228FF741D9AC86E004E157E /* busping */ = {
 			isa = PBXGroup;
 			children = (
+				354B66F91F1438BE00473CA0 /* busping.entitlements */,
 				B228FF751D9AC86E004E157E /* AppDelegate.swift */,
 				B228FF771D9AC86E004E157E /* ViewController.swift */,
 				B228FF791D9AC86E004E157E /* Main.storyboard */,
@@ -126,6 +128,14 @@
 						DevelopmentTeam = 7K9KLB5QXN;
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -341,6 +351,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = busping/busping.entitlements;
 				DEVELOPMENT_TEAM = 7K9KLB5QXN;
 				INFOPLIST_FILE = busping/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -356,6 +367,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = busping/busping.entitlements;
 				DEVELOPMENT_TEAM = 7K9KLB5QXN;
 				INFOPLIST_FILE = busping/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
