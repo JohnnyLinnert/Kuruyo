@@ -32,7 +32,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     //code to make a token string
     func tokenString(_ deviceToken:Data) -> String{
-        //code to make a token string
         let bytes = [UInt8](deviceToken)
         var token = ""
         for byte in bytes{

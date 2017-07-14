@@ -6,6 +6,9 @@
 //  Copyright © 2017 Johnny Linnert. All rights reserved.
 //
 
+
+// See below notes about the current status and next steps for this project
+
 import UIKit
 import Alamofire
 import Kanna
@@ -61,18 +64,38 @@ class ViewController: UIViewController {
                 if row.css(".stopName a").count > 0 {
                     let stopName = row.css(".stopName a")[0].text
                     lastStop = Stop(name: stopName ?? "No name")
-
-                } else if row.css(".balloonL img[src=buslocation/images/PC_00.png]").count > 0 {
+                }
+    
+                else if row.css(".balloonL img[src=buslocation/images/PC_00.png]").count > 0 {
                     let bus = Bus(leftStop: lastStop)
                     buses.append(bus)
                 }
-
-
             }
-
         }
         return buses
     }
+    
+//    func getRightBuses(_ rawHTML: String) -> [RightBus] {
+//        var rightbuses = [RightBus]()
+//        if let doc = Kanna.HTML(html: rawHTML, encoding: .utf8) {
+//            
+//            var lastStop: Stop? = nil
+//            
+//            for row in doc.css(".routeListTbl tr") {
+//                
+//                if row.css(".stopName a").count > 0 {
+//                    let stopName = row.css(".stopName a")[0].text
+//                    lastStop = Stop(name: stopName ?? "No name")
+//                }
+//                    
+//                else if row.css(".balloonR img[src=buslocation/images/PC_00.png]").count > 0 {
+//                    let rightbus = RightBus(rightStop: lastStop)
+//                    rightbuses.append(rightbus)
+//                }
+//            }
+//        }
+//        return rightbuses
+//    }
 
 
     func getStops(_ rawHTML: String) -> [Stop] {
@@ -95,6 +118,13 @@ class ViewController: UIViewController {
 struct Bus {
     let leftStop: Stop?
 }
+
+// **Need to address above inconsistency in naming -> leftStop does not match up with LeftBus. This needs to be implemented for both coming and going buses to ultimately be displayed and for me to differentiate between the two types of outputs.**
+
+
+//struct RightBus {
+//    let rightStop: Stop?
+//}
 
 struct Stop {
     let name: String
