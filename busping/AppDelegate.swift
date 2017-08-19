@@ -1,9 +1,10 @@
 //
 //  AppDelegate.swift
-//  busping
+//  Kuruyo (previously busping)
 //
-//  Created by Johnny on 2016/09/28.
-//  Copyright © 2016 Johnny Linnert. All rights reserved.
+//  Created by Johnny Linnert, beginning on 2016/09/28
+//  With great help from Greg de Jonckheere and Jonathon Toon
+//  Copyright © 2016-2017 Johnny Linnert. All rights reserved.
 //
 
 import UIKit
@@ -23,7 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if granted{
                 application.registerForRemoteNotifications()
             } else {
-                print("User Notification permission denied: \(error?.localizedDescription)")
+                print("User Notification permission denied: \(error?.localizedDescription ?? "default error")")
+              //print("User Notification permission denied: \(error?.localizedDescription)") was the original code, not 100% sure of the implications in the changes I made, but we'll see!
             }
             
         }
