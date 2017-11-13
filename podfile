@@ -4,5 +4,5 @@ use_frameworks!
 
 target 'busping' do
     pod 'Alamofire', '~> 4.5.0'
-    pod 'Kanna', '~> 2.1.1'
+    pod ‘Kanna', :git => 'https://github.com/tid-kijyun/Kanna', :branch => ‘feature/v4.0.0’
 end
