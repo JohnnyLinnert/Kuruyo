@@ -20,13 +20,6 @@ class ViewController: UIViewController {
         requestHTML() { [unowned self] rawMarkup in
             let stops = self.getStops(rawMarkup)
 
-//            for stop in stops {
-//                print(stop.name)
-//            }
-//
-//            print()
-//            print()
-
             for stop in stops.reversed() {
                 print(stop.name)
             }
@@ -34,10 +27,10 @@ class ViewController: UIViewController {
             print()
             print()
 
-            let buses = self.getBuses(rawMarkup)
+            let buses = self.getLeftBuses(rawMarkup)
             for bus in buses {
-                if let stop = bus.leftStop {
-                    print(stop.name)
+                if let stop = bus.stop {
+                    print("Left Buses leaving", stop.name)
                 } else {
                     print("Idling bus")
                 }
@@ -45,15 +38,14 @@ class ViewController: UIViewController {
             
             let rightbuses = self.getRightBuses(rawMarkup)
             for bus in rightbuses {
-                if let stop = bus.rightStop {
-                    print(stop.name)
+                if let stop = bus.stop {
+                    print("Right Buses leaving", stop.name)
                 } else {
                     print("Idling bus")
                 }
                 }
             }
         }
-    //}
 
     func requestHTML(completed: @escaping (String) -> ()) {
         Alamofire.request("http://tokyu.bus-location.jp/blsys/navi?VID=rtl&EID=nt&PRM=&RAMK=116&SCT=1").response { response in
@@ -62,98 +54,85 @@ class ViewController: UIViewController {
             }
         }
     }
+    
+    //MARK: - Get Busses
 
-    func getBuses(_ rawHTML: String) -> [Bus] {
-        var buses = [Bus]()
-        if let doc = Kanna.HTML(html: rawHTML, encoding: .utf8) {
+    func getLeftBuses(_ rawHTML: String) -> [Bus] {
+        var leftBuses = [Bus]()
+        
+        do {
+            let doc = try Kanna.HTML(html: rawHTML, encoding: .utf8)
 
             var lastStop: Stop? = nil
-
+            
             for row in doc.css(".routeListTbl tr").reversed() {
-
-                if row.css(".stopName a").count > 0 {
-                    let stopName = row.css(".stopName a")[0].text
-                    lastStop = Stop(name: stopName ?? "No name")
-                }
-    
-                else if row.css(".balloonL img[src=buslocation/images/PC_00.png]").count > 0 {
-                    let bus = Bus(leftStop: lastStop)
-                    buses.append(bus)
-                }
-            }
-        }
-        return buses
-    }
-    
-    //
-    
-    func getRightBuses(_ rawHTML: String) -> [RightBus] {
-        var rightbuses = [RightBus]()
-        if let doc = Kanna.HTML(html: rawHTML, encoding: .utf8) {
-            
-            var lastStop: Stop? = nil
-            
-            for row in doc.css(".routeListTbl tr") {
                 
                 if row.css(".stopName a").count > 0 {
                     let stopName = row.css(".stopName a")[0].text
                     lastStop = Stop(name: stopName ?? "No name")
                 }
                     
-                else if row.css(".balloonR img[src=buslocation/images/PC_00.png]").count > 0 {
-                    let rightbus = RightBus(rightStop: lastStop)
-                    rightbuses.append(rightbus)
+                else if row.css(".balloonL img[src=buslocation/images/PC_00.png]").count > 0 {
+                    let leftBus = Bus(stop: lastStop)
+                    leftBuses.append(leftBus)
                 }
             }
+        } catch {
+            print("Failed to get LeftBuses from raw HTML", error)
         }
-        return rightbuses
+        
+        return leftBuses
     }
     
-    //
-
+    func getRightBuses(_ rawHTML: String) -> [Bus] {
+        var rightBuses = [Bus]()
+        do {
+            let doc = try Kanna.HTML(html: rawHTML, encoding: .utf8)
+            var lastStop: Stop? = nil
+        
+            for row in doc.css(".routeListTbl tr") {
+                
+                if row.css(".stopName a").count > 0 {
+                    let stopName = row.css(".stopName a")[0].text
+                    lastStop = Stop(name: stopName ?? "No name")
+                }
+                else if row.css(".balloonR img[src=buslocation/images/PC_00.png]").count > 0 {
+                    let rightBus = Bus(stop: lastStop)
+                    rightBuses.append(rightBus)
+                }
+            }
+            
+        } catch {
+            print("Failed to get RightBuses from raw HTML", error)
+        }
+        
+        return rightBuses
+    }
+    
+    //MARK: - Get Stops
 
     func getStops(_ rawHTML: String) -> [Stop] {
         var stops = [Stop]()
-        if let doc = Kanna.HTML(html: rawHTML, encoding: .utf8) {
+        
+        do {
+            let doc = try Kanna.HTML(html: rawHTML, encoding: .utf8)
             
             for stopRow in doc.css(".routeListTbl .stopName a").reversed() {
                 let stop = Stop(name: stopRow.text ?? "No name")
                 stops.append(stop)
             }
-            
+        } catch {
+            print("Failed to get stops from raw HTML")
         }
         return stops
     }
     
     
-//    func getStops(_ rawHTML: String) -> [Stop] {
-//        var stops = [Stop]()
-//        if let doc = Kanna.HTML(html: rawHTML, encoding: .utf8) {
-//            
-//            for stopRow in doc.css(".routeListTbl .stopName a").reversed() {
-//                let stop = Stop(name: stopRow.text ?? "No name")
-//                stops.append(stop)
-//            }
-//            
-//        }
-//        return stops
-//    }
-    
-    
 }
-
 
 struct Bus {
-    let leftStop: Stop?
+    let stop: Stop?
 }
-
-// **Need to address above inconsistency in naming -> leftStop does not match up with LeftBus. This needs to be implemented for both coming and going buses to ultimately be displayed and for me to differentiate between the two types of outputs.**
-
-//
-struct RightBus {
-    let rightStop: Stop?
-}
-//
 
 struct Stop {
     let name: String

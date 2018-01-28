@@ -1,15 +1,25 @@
 PODS:
   - Alamofire (4.5.0)
-  - Kanna (2.1.1)
+  - Kanna (4.0.0)
 
 DEPENDENCIES:
-  - Alamofire (~> 4.0)
-  - Kanna (~> 2.1.0)
+  - Alamofire (~> 4.5)
+  - Kanna (from `https://github.com/tid-kijyun/Kanna`, branch `feature/v4.0.0`)
+
+EXTERNAL SOURCES:
+  Kanna:
+    :branch: feature/v4.0.0
+    :git: https://github.com/tid-kijyun/Kanna
+
+CHECKOUT OPTIONS:
+  Kanna:
+    :commit: 58e3513d20cd16fe8b9ff16b5a2b481fcd643499
+    :git: https://github.com/tid-kijyun/Kanna
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
-  Kanna: 9b4b086c218703f2b94f5b21a466217dd2f9332e
+  Kanna: d5ae2a26472f7e7a474e7f36a9cd8aa2c8c63ad3
 
-PODFILE CHECKSUM: d0e863d92c534d5de5ff1abfe4c92f098a5aba32
+PODFILE CHECKSUM: 443e882bcaa7ff8d3c545a42679f2df93ae6caab
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.4.0
