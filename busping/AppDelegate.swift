@@ -18,17 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert,.sound,.badge]){
-            (granted,error) in
-            if granted{
-                application.registerForRemoteNotifications()
-            } else {
-                print("User Notification permission denied: \(error?.localizedDescription ?? "default error")")
-              //print("User Notification permission denied: \(error?.localizedDescription)") was the original code, not 100% sure of the implications in the changes I made, but we'll see!
-            }
-            
-        }
         return true
     }
     
