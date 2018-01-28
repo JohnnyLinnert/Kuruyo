@@ -15,37 +15,71 @@ import Kanna
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var leftBusesDisplay: UILabel!
+    @IBOutlet weak var rightBusesDisplay: UILabel!
+    
+    @IBAction func refreshBuses(_ sender: Any) {
+        gatherBusData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        gatherBusData()
+    }
+    
+    func gatherBusData() {
         requestHTML() { [unowned self] rawMarkup in
-            let stops = self.getStops(rawMarkup)
-
-            for stop in stops.reversed() {
-                print(stop.name)
-            }
-
-            print()
-            print()
-
-            let buses = self.getLeftBuses(rawMarkup)
-            for bus in buses {
-                if let stop = bus.stop {
-                    print("Left Buses leaving", stop.name)
-                } else {
-                    print("Idling bus")
-                }
-            }
-            
-            let rightbuses = self.getRightBuses(rawMarkup)
-            for bus in rightbuses {
-                if let stop = bus.stop {
-                    print("Right Buses leaving", stop.name)
-                } else {
-                    print("Idling bus")
-                }
-                }
+            self.displayBusStops(rawMarkup)
+            self.displayLeftBuses(rawMarkup)
+            self.displayRightBuses(rawMarkup)
+        }
+    }
+    
+    func displayBusStops(_ rawMarkup: String) {
+        let stops = self.getStops(rawMarkup)
+        
+        for stop in stops.reversed() {
+            print(stop.name)
+        }
+        
+        print()
+        print()
+    }
+    
+    func displayLeftBuses(_ rawMarkup: String) {
+        let buses = self.getLeftBuses(rawMarkup)
+        
+        var busStopNames = [String]()
+        
+        for bus in buses {
+            if let stop = bus.stop {
+                print("Left Buses leaving", stop.name)
+                busStopNames.append(stop.name)
+            } else {
+                print("Idling bus")
+                busStopNames.append("Idling Bus")
             }
         }
+        
+        leftBusesDisplay.text = busStopNames.joined(separator: "\n")
+    }
+    
+    func displayRightBuses(_ rawMarkup: String) {
+        let rightbuses = self.getRightBuses(rawMarkup)
+        
+        var busStopNames = [String]()
+        
+        for bus in rightbuses {
+            if let stop = bus.stop {
+                print("Right Buses leaving", stop.name)
+                busStopNames.append(stop.name)
+            } else {
+                print("Idling bus")
+                busStopNames.append("Idling Bus")
+            }
+        }
+        rightBusesDisplay.text = busStopNames.joined(separator: "\n")
+    }
 
     func requestHTML(completed: @escaping (String) -> ()) {
         Alamofire.request("http://tokyu.bus-location.jp/blsys/navi?VID=rtl&EID=nt&PRM=&RAMK=116&SCT=1").response { response in
@@ -80,7 +114,6 @@ class ViewController: UIViewController {
         } catch {
             print("Failed to get LeftBuses from raw HTML", error)
         }
-        
         return leftBuses
     }
     
@@ -126,8 +159,6 @@ class ViewController: UIViewController {
         }
         return stops
     }
-    
-    
 }
 
 struct Bus {
