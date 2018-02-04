@@ -10,13 +10,45 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "buspingTests/TokyuBusHTMLRepositoryTests.swift"
-            timestampString = "539419673.1212161"
+            timestampString = "539422621.85238"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "11"
             endingLineNumber = "11"
             landmarkName = "test_getsHTMLFromTokyu()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.String) -&gt; () in buspingTests.TokyuBusHTMLRepositoryTests.test_getsHTMLFromTokyu() -&gt; ()"
+                  moduleName = "buspingTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/johnny/Documents/GitHub/Kuruyo/buspingTests/TokyuBusHTMLRepositoryTests.swift"
+                  timestampString = "539421947.326726"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "61">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "implicit closure #1 : @autoclosure () throws -&gt; Swift.Optional&lt;Any&gt; in closure #1 (Swift.String) -&gt; () in buspingTests.TokyuBusHTMLRepositoryTests.test_getsHTMLFromTokyu() -&gt; ()"
+                  moduleName = "buspingTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/johnny/Documents/GitHub/Kuruyo/buspingTests/TokyuBusHTMLRepositoryTests.swift"
+                  timestampString = "539421947.333253"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "20">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
