@@ -1,0 +1,6 @@
+framework module Pods_buspingTests {
+  umbrella header "Pods-buspingTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

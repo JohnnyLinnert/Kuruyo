@@ -7,19 +7,43 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1FC235E67CF28E42F98672D5 /* Pods_buspingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6469BC430A322FF2D0C3FD3B /* Pods_buspingTests.framework */; };
 		372FF896456C7094481B60A7 /* Pods_busping.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42FA1266424FCA93F00882A9 /* Pods_busping.framework */; };
+		B2287B5D2026CE5400375B68 /* BusLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2287B5C2026CE5400375B68 /* BusLocations.swift */; };
+		B2287B5F2026CE7800375B68 /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2287B5E2026CE7800375B68 /* Stop.swift */; };
+		B2287B612026D00A00375B68 /* TokyuBusHTMLRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2287B602026D00A00375B68 /* TokyuBusHTMLRepository.swift */; };
 		B228FF761D9AC86E004E157E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B228FF751D9AC86E004E157E /* AppDelegate.swift */; };
 		B228FF781D9AC86E004E157E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B228FF771D9AC86E004E157E /* ViewController.swift */; };
 		B228FF7B1D9AC86E004E157E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B228FF791D9AC86E004E157E /* Main.storyboard */; };
 		B228FF7D1D9AC86E004E157E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B228FF7C1D9AC86E004E157E /* Assets.xcassets */; };
 		B228FF801D9AC86E004E157E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B228FF7E1D9AC86E004E157E /* LaunchScreen.storyboard */; };
+		B2897E732026D6F600F70428 /* DefaultBusStopFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2897E722026D6F600F70428 /* DefaultBusStopFactory.swift */; };
+		B2897E752026D71800F70428 /* DefaultBusStopFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2897E742026D71800F70428 /* DefaultBusStopFactoryTests.swift */; };
+		B2897E772026DB4600F70428 /* DefaultBusLocationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2897E762026DB4600F70428 /* DefaultBusLocationFactory.swift */; };
+		B2897E792026DC9600F70428 /* DefaultBusLocationFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2897E782026DC9600F70428 /* DefaultBusLocationFactoryTests.swift */; };
+		B2BB5A222026D39C001FC7BD /* TokyuBusHTMLRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BB5A212026D39C001FC7BD /* TokyuBusHTMLRepositoryTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B2BB5A242026D39C001FC7BD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B228FF6A1D9AC86D004E157E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B228FF711D9AC86D004E157E;
+			remoteInfo = busping;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		354B66F91F1438BE00473CA0 /* busping.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = busping.entitlements; sourceTree = "<group>"; };
+		36AF60FE857950365284048F /* Pods-buspingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-buspingTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-buspingTests/Pods-buspingTests.debug.xcconfig"; sourceTree = "<group>"; };
 		42FA1266424FCA93F00882A9 /* Pods_busping.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_busping.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B93116794B699A9A28A4668 /* Pods-busping.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-busping.release.xcconfig"; path = "Pods/Target Support Files/Pods-busping/Pods-busping.release.xcconfig"; sourceTree = "<group>"; };
+		6469BC430A322FF2D0C3FD3B /* Pods_buspingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_buspingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		989F46A539567D0BCFD7A85C /* Pods-busping.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-busping.debug.xcconfig"; path = "Pods/Target Support Files/Pods-busping/Pods-busping.debug.xcconfig"; sourceTree = "<group>"; };
+		B2287B5C2026CE5400375B68 /* BusLocations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusLocations.swift; sourceTree = "<group>"; };
+		B2287B5E2026CE7800375B68 /* Stop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stop.swift; sourceTree = "<group>"; };
+		B2287B602026D00A00375B68 /* TokyuBusHTMLRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokyuBusHTMLRepository.swift; sourceTree = "<group>"; };
 		B228FF721D9AC86E004E157E /* busping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = busping.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B228FF751D9AC86E004E157E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B228FF771D9AC86E004E157E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -27,6 +51,14 @@
 		B228FF7C1D9AC86E004E157E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B228FF7F1D9AC86E004E157E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B228FF811D9AC86E004E157E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B2897E722026D6F600F70428 /* DefaultBusStopFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultBusStopFactory.swift; sourceTree = "<group>"; };
+		B2897E742026D71800F70428 /* DefaultBusStopFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultBusStopFactoryTests.swift; sourceTree = "<group>"; };
+		B2897E762026DB4600F70428 /* DefaultBusLocationFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultBusLocationFactory.swift; sourceTree = "<group>"; };
+		B2897E782026DC9600F70428 /* DefaultBusLocationFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultBusLocationFactoryTests.swift; sourceTree = "<group>"; };
+		B2BB5A1F2026D39C001FC7BD /* buspingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = buspingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2BB5A212026D39C001FC7BD /* TokyuBusHTMLRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokyuBusHTMLRepositoryTests.swift; sourceTree = "<group>"; };
+		B2BB5A232026D39C001FC7BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B3D415A24FEFE170A3EA455D /* Pods-buspingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-buspingTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-buspingTests/Pods-buspingTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +70,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B2BB5A1C2026D39C001FC7BD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FC235E67CF28E42F98672D5 /* Pods_buspingTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -46,6 +86,8 @@
 			children = (
 				989F46A539567D0BCFD7A85C /* Pods-busping.debug.xcconfig */,
 				4B93116794B699A9A28A4668 /* Pods-busping.release.xcconfig */,
+				36AF60FE857950365284048F /* Pods-buspingTests.debug.xcconfig */,
+				B3D415A24FEFE170A3EA455D /* Pods-buspingTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -54,14 +96,48 @@
 			isa = PBXGroup;
 			children = (
 				42FA1266424FCA93F00882A9 /* Pods_busping.framework */,
+				6469BC430A322FF2D0C3FD3B /* Pods_buspingTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B2287B592026CE0A00375B68 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				354B66F91F1438BE00473CA0 /* busping.entitlements */,
+				B228FF751D9AC86E004E157E /* AppDelegate.swift */,
+				B228FF791D9AC86E004E157E /* Main.storyboard */,
+				B228FF7C1D9AC86E004E157E /* Assets.xcassets */,
+				B228FF7E1D9AC86E004E157E /* LaunchScreen.storyboard */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		B2287B5A2026CE2000375B68 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				B2287B5C2026CE5400375B68 /* BusLocations.swift */,
+				B2287B5E2026CE7800375B68 /* Stop.swift */,
+				B2287B602026D00A00375B68 /* TokyuBusHTMLRepository.swift */,
+				B2897E722026D6F600F70428 /* DefaultBusStopFactory.swift */,
+				B2897E762026DB4600F70428 /* DefaultBusLocationFactory.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		B2287B5B2026CE2700375B68 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				B228FF771D9AC86E004E157E /* ViewController.swift */,
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 		B228FF691D9AC86D004E157E = {
 			isa = PBXGroup;
 			children = (
 				B228FF741D9AC86E004E157E /* busping */,
+				B2BB5A202026D39C001FC7BD /* buspingTests */,
 				B228FF731D9AC86E004E157E /* Products */,
 				400403E9566D9CAC9CB33B05 /* Pods */,
 				5684E428FF674839C36B13A9 /* Frameworks */,
@@ -72,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				B228FF721D9AC86E004E157E /* busping.app */,
+				B2BB5A1F2026D39C001FC7BD /* buspingTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -79,15 +156,23 @@
 		B228FF741D9AC86E004E157E /* busping */ = {
 			isa = PBXGroup;
 			children = (
-				354B66F91F1438BE00473CA0 /* busping.entitlements */,
-				B228FF751D9AC86E004E157E /* AppDelegate.swift */,
-				B228FF771D9AC86E004E157E /* ViewController.swift */,
-				B228FF791D9AC86E004E157E /* Main.storyboard */,
-				B228FF7C1D9AC86E004E157E /* Assets.xcassets */,
-				B228FF7E1D9AC86E004E157E /* LaunchScreen.storyboard */,
 				B228FF811D9AC86E004E157E /* Info.plist */,
+				B2287B592026CE0A00375B68 /* Application */,
+				B2287B5A2026CE2000375B68 /* Components */,
+				B2287B5B2026CE2700375B68 /* Screens */,
 			);
 			path = busping;
+			sourceTree = "<group>";
+		};
+		B2BB5A202026D39C001FC7BD /* buspingTests */ = {
+			isa = PBXGroup;
+			children = (
+				B2BB5A212026D39C001FC7BD /* TokyuBusHTMLRepositoryTests.swift */,
+				B2BB5A232026D39C001FC7BD /* Info.plist */,
+				B2897E742026D71800F70428 /* DefaultBusStopFactoryTests.swift */,
+				B2897E782026DC9600F70428 /* DefaultBusLocationFactoryTests.swift */,
+			);
+			path = buspingTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -113,13 +198,34 @@
 			productReference = B228FF721D9AC86E004E157E /* busping.app */;
 			productType = "com.apple.product-type.application";
 		};
+		B2BB5A1E2026D39C001FC7BD /* buspingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B2BB5A262026D39C001FC7BD /* Build configuration list for PBXNativeTarget "buspingTests" */;
+			buildPhases = (
+				D4124EE3D45D027E23271712 /* [CP] Check Pods Manifest.lock */,
+				B2BB5A1B2026D39C001FC7BD /* Sources */,
+				B2BB5A1C2026D39C001FC7BD /* Frameworks */,
+				B2BB5A1D2026D39C001FC7BD /* Resources */,
+				E557AB08CCC8FCF5DED8ACA9 /* [CP] Embed Pods Frameworks */,
+				597CA0B48D00E5FF7991D91E /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B2BB5A252026D39C001FC7BD /* PBXTargetDependency */,
+			);
+			name = buspingTests;
+			productName = buspingTests;
+			productReference = B2BB5A1F2026D39C001FC7BD /* buspingTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		B228FF6A1D9AC86D004E157E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0800;
+				LastSwiftUpdateCheck = 0920;
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "Johnny Linnert";
 				TargetAttributes = {
@@ -137,6 +243,12 @@
 							};
 						};
 					};
+					B2BB5A1E2026D39C001FC7BD = {
+						CreatedOnToolsVersion = 9.2;
+						DevelopmentTeam = 7K9KLB5QXN;
+						ProvisioningStyle = Automatic;
+						TestTargetID = B228FF711D9AC86D004E157E;
+					};
 				};
 			};
 			buildConfigurationList = B228FF6D1D9AC86D004E157E /* Build configuration list for PBXProject "busping" */;
@@ -153,6 +265,7 @@
 			projectRoot = "";
 			targets = (
 				B228FF711D9AC86D004E157E /* busping */,
+				B2BB5A1E2026D39C001FC7BD /* buspingTests */,
 			);
 		};
 /* End PBXProject section */
@@ -168,9 +281,31 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B2BB5A1D2026D39C001FC7BD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		597CA0B48D00E5FF7991D91E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-buspingTests/Pods-buspingTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		73B2BA83B427D7E067690368 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -186,6 +321,24 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-busping/Pods-busping-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D4124EE3D45D027E23271712 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-buspingTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		D6EA921197DD1332C4DBD1B3 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -194,12 +347,16 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-busping/Pods-busping-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/BrightFutures/BrightFutures.framework",
 				"${BUILT_PRODUCTS_DIR}/Kanna/Kanna.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BrightFutures.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kanna.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -224,6 +381,30 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		E557AB08CCC8FCF5DED8ACA9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-buspingTests/Pods-buspingTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/BrightFutures/BrightFutures.framework",
+				"${BUILT_PRODUCTS_DIR}/Kanna/Kanna.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BrightFutures.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kanna.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-buspingTests/Pods-buspingTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -231,12 +412,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2287B612026D00A00375B68 /* TokyuBusHTMLRepository.swift in Sources */,
+				B2897E732026D6F600F70428 /* DefaultBusStopFactory.swift in Sources */,
+				B2287B5D2026CE5400375B68 /* BusLocations.swift in Sources */,
 				B228FF781D9AC86E004E157E /* ViewController.swift in Sources */,
 				B228FF761D9AC86E004E157E /* AppDelegate.swift in Sources */,
+				B2897E772026DB4600F70428 /* DefaultBusLocationFactory.swift in Sources */,
+				B2287B5F2026CE7800375B68 /* Stop.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2BB5A1B2026D39C001FC7BD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2897E752026D71800F70428 /* DefaultBusStopFactoryTests.swift in Sources */,
+				B2897E792026DC9600F70428 /* DefaultBusLocationFactoryTests.swift in Sources */,
+				B2BB5A222026D39C001FC7BD /* TokyuBusHTMLRepositoryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B2BB5A252026D39C001FC7BD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B228FF711D9AC86D004E157E /* busping */;
+			targetProxy = B2BB5A242026D39C001FC7BD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		B228FF791D9AC86E004E157E /* Main.storyboard */ = {
@@ -375,7 +579,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = busping/busping.entitlements;
+				CODE_SIGN_ENTITLEMENTS = busping/Application/busping.entitlements;
 				DEVELOPMENT_TEAM = 7K9KLB5QXN;
 				INFOPLIST_FILE = busping/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -392,7 +596,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = busping/busping.entitlements;
+				CODE_SIGN_ENTITLEMENTS = busping/Application/busping.entitlements;
 				DEVELOPMENT_TEAM = 7K9KLB5QXN;
 				INFOPLIST_FILE = busping/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -400,6 +604,52 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		B2BB5A272026D39C001FC7BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 36AF60FE857950365284048F /* Pods-buspingTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7K9KLB5QXN;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = buspingTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.johnnylinnert.buspingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/busping.app/busping";
+			};
+			name = Debug;
+		};
+		B2BB5A282026D39C001FC7BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B3D415A24FEFE170A3EA455D /* Pods-buspingTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7K9KLB5QXN;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = buspingTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.johnnylinnert.buspingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/busping.app/busping";
 			};
 			name = Release;
 		};
@@ -420,6 +670,15 @@
 			buildConfigurations = (
 				B228FF851D9AC86E004E157E /* Debug */,
 				B228FF861D9AC86E004E157E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B2BB5A262026D39C001FC7BD /* Build configuration list for PBXNativeTarget "buspingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2BB5A272026D39C001FC7BD /* Debug */,
+				B2BB5A282026D39C001FC7BD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

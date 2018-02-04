@@ -1,9 +1,13 @@
 PODS:
-  - Alamofire (4.5.0)
+  - Alamofire (4.6.0)
+  - BrightFutures (6.0.0):
+    - Result (~> 3.2.4)
   - Kanna (4.0.0)
+  - Result (3.2.4)
 
 DEPENDENCIES:
   - Alamofire (~> 4.5)
+  - BrightFutures (= 6.0.0)
   - Kanna (from `https://github.com/tid-kijyun/Kanna`, branch `feature/v4.0.0`)
 
 EXTERNAL SOURCES:
@@ -17,9 +21,11 @@ CHECKOUT OPTIONS:
     :git: https://github.com/tid-kijyun/Kanna
 
 SPEC CHECKSUMS:
-  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
+  Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
+  BrightFutures: 9e7604f511aed9f0d6a49b04ac9b3fca6b117758
   Kanna: d5ae2a26472f7e7a474e7f36a9cd8aa2c8c63ad3
+  Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
 
-PODFILE CHECKSUM: 443e882bcaa7ff8d3c545a42679f2df93ae6caab
+PODFILE CHECKSUM: 32339654c12db9a84894ec83f99ab546f5d5d235
 
 COCOAPODS: 1.4.0
