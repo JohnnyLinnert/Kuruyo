@@ -18,28 +18,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        UIApplication.shared.setMinimumBackgroundFetchInterval(5)
         return true
     }
     
-    //code to make a token string
-    func tokenString(_ deviceToken:Data) -> String{
-        let bytes = [UInt8](deviceToken)
-        var token = ""
-        for byte in bytes{
-            token += String(format: "%02x",byte)
+    func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        
+        TokyuBusHTMLRepository().getHTML().onSuccess { html in
+            if let stop = DefaultBusStopFactory().findStopByScanningDown(
+                stopsAway: 3,
+                from: "守屋図書館",
+                with: html
+            ) {
+
+                let allBusLocations = DefaultBusLocationFactory().getLeftBusLocations(with: html)
+                let isAtStop = TokyuBusLocationChecker().checkIfBusIsThreeStopsAway(
+                    at: stop,
+                    busLocations: allBusLocations
+                )
+
+                if isAtStop {
+                    // SEND NOTIFICATION!!
+                    print("got some new data")
+                } else {
+                    print("not at the stop")
+                }
+
+                completionHandler(.newData)
+            } else {
+                print("noStop")
+                completionHandler(.newData)
+            }
         }
-        return token
-    }
-    
-    // Successful registration and you have a token. Send the token to your provider, in this case the console for cut and paste.
-    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        print("Successful registration. Token is:")
-        print(tokenString(deviceToken))
-    }
-    
-    // Failed registration. Explain why.
-    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
-        print("Failed to register for remote notifications: \(error.localizedDescription)")
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
