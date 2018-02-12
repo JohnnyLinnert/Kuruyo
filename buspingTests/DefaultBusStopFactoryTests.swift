@@ -1,11 +1,24 @@
 import XCTest
+import BrightFutures
+import Result
+
 @testable import busping
 class DefaultBusStopFactoryTests: XCTestCase {
     let factory = DefaultBusStopFactory()
     
     func test_factoryGetsStopsFromHTML() {
         let stops = factory.getStops(with: FakeHTML().result)
-        XCTAssertEqual(stops[0].name, "用賀駅")
+        XCTAssertEqual(stops[0].name, "恵比寿駅")
+    }
+    
+    func test_canFindMoriyaToshokan() {
+        let stop = factory.findStop(named: "守屋図書館", with: FakeHTML().result)
+        XCTAssertEqual(stop[0].name, "守屋図書館")
+    }
+    
+    func test_findXStopsAway() {
+        let stop = factory.findStopByScanningDown(stopsAway: 3, from: "守屋図書館", with: FakeHTML().result)
+        XCTAssertEqual(stop!.name, "下馬六丁目")
     }
 }
 
