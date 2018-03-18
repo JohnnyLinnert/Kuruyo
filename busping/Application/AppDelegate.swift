@@ -14,42 +14,45 @@ import UserNotifications
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var token: String?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        UIApplication.shared.setMinimumBackgroundFetchInterval(5)
+        
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert,.sound,.badge]){
+            (granted,error) in
+            if granted{
+                application.registerForRemoteNotifications()
+            } else {
+                print("User Notification permission denied: \(error?.localizedDescription ?? "default error")")
+                //print("User Notification permission denied: \(error?.localizedDescription)") was the original code, not 100% sure of the implications in the changes I made, but we'll see!
+            }
+            
+        }
+        
         return true
     }
     
-    func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        
-        TokyuBusHTMLRepository().getHTML().onSuccess { html in
-            if let stop = DefaultBusStopFactory().findStopByScanningDown(
-                stopsAway: 3,
-                from: "守屋図書館",
-                with: html
-            ) {
-
-                let allBusLocations = DefaultBusLocationFactory().getLeftBusLocations(with: html)
-                let isAtStop = TokyuBusLocationChecker().checkIfBusIsThreeStopsAway(
-                    at: stop,
-                    busLocations: allBusLocations
-                )
-
-                if isAtStop {
-                    // SEND NOTIFICATION!!
-                    print("got some new data")
-                } else {
-                    print("not at the stop")
-                }
-
-                completionHandler(.newData)
-            } else {
-                print("noStop")
-                completionHandler(.newData)
-            }
+    //code to make a token string
+    func tokenString(_ deviceToken:Data) -> String{
+        let bytes = [UInt8](deviceToken)
+        var token = ""
+        for byte in bytes{
+            token += String(format: "%02x",byte)
         }
+        return token
+    }
+    
+    // Successful registration and you have a token. Send the token to your provider, in this case the console for cut and paste.
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        print("Successful registration. Token is:")
+        token = tokenString(deviceToken)
+        print(tokenString(deviceToken))
+    }
+    
+    // Failed registration. Explain why.
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        print("Failed to register for remote notifications: \(error.localizedDescription)")
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

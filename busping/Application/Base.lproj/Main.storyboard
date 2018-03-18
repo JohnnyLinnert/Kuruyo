@@ -68,6 +68,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D36-nL-3mC">
+                                <rect key="frame" x="130" y="581" width="114" height="30"/>
+                                <state key="normal" title="such notification"/>
+                                <connections>
+                                    <action selector="sendNotification:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QgY-JX-zuw"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -77,7 +84,9 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="qoO-IK-MB5" secondAttribute="bottom" constant="16" id="CUx-jP-5IJ"/>
                             <constraint firstItem="qoO-IK-MB5" firstAttribute="top" secondItem="RY9-5k-S7C" secondAttribute="bottom" constant="8" id="MDD-7C-zQY"/>
                             <constraint firstItem="MH1-Ug-o4z" firstAttribute="top" secondItem="fgL-eT-zRr" secondAttribute="bottom" constant="8" id="adN-uF-UUq"/>
+                            <constraint firstItem="qoO-IK-MB5" firstAttribute="top" secondItem="D36-nL-3mC" secondAttribute="bottom" constant="8" id="fSw-DI-MXO"/>
                             <constraint firstItem="qoO-IK-MB5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iqq-AZ-k4C"/>
+                            <constraint firstItem="D36-nL-3mC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jW3-rU-aGs"/>
                             <constraint firstItem="RY9-5k-S7C" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="jaA-PR-xdj"/>
                             <constraint firstItem="RY9-5k-S7C" firstAttribute="top" secondItem="6OE-h6-37R" secondAttribute="bottom" constant="8" id="s5m-3K-MsM"/>
                             <constraint firstItem="6OE-h6-37R" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="tnT-Cc-k47"/>
