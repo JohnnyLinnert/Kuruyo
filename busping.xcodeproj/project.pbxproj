@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		1FC235E67CF28E42F98672D5 /* Pods_buspingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6469BC430A322FF2D0C3FD3B /* Pods_buspingTests.framework */; };
 		372FF896456C7094481B60A7 /* Pods_busping.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42FA1266424FCA93F00882A9 /* Pods_busping.framework */; };
+		B2024BC7206744E200148E47 /* SelectBusLineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2024BC6206744E200148E47 /* SelectBusLineTableViewController.swift */; };
+		B2024BC92067458000148E47 /* SelectBusLineTableViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2024BC82067458000148E47 /* SelectBusLineTableViewControllerSpec.swift */; };
+		B2024BCB206747C500148E47 /* TestSetupExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2024BCA206747C500148E47 /* TestSetupExtensions.swift */; };
+		B2024BCF20674F2000148E47 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2024BCE20674F2000148E47 /* main.swift */; };
+		B2024BD020674F4000148E47 /* TestingAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2024BCC20674EDB00148E47 /* TestingAppDelegate.swift */; };
 		B2287B5D2026CE5400375B68 /* BusLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2287B5C2026CE5400375B68 /* BusLocations.swift */; };
 		B2287B5F2026CE7800375B68 /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2287B5E2026CE7800375B68 /* Stop.swift */; };
 		B2287B612026D00A00375B68 /* TokyuBusHTMLRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2287B602026D00A00375B68 /* TokyuBusHTMLRepository.swift */; };
@@ -43,6 +48,11 @@
 		4B93116794B699A9A28A4668 /* Pods-busping.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-busping.release.xcconfig"; path = "Pods/Target Support Files/Pods-busping/Pods-busping.release.xcconfig"; sourceTree = "<group>"; };
 		6469BC430A322FF2D0C3FD3B /* Pods_buspingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_buspingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		989F46A539567D0BCFD7A85C /* Pods-busping.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-busping.debug.xcconfig"; path = "Pods/Target Support Files/Pods-busping/Pods-busping.debug.xcconfig"; sourceTree = "<group>"; };
+		B2024BC6206744E200148E47 /* SelectBusLineTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBusLineTableViewController.swift; sourceTree = "<group>"; };
+		B2024BC82067458000148E47 /* SelectBusLineTableViewControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBusLineTableViewControllerSpec.swift; sourceTree = "<group>"; };
+		B2024BCA206747C500148E47 /* TestSetupExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestSetupExtensions.swift; sourceTree = "<group>"; };
+		B2024BCC20674EDB00148E47 /* TestingAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestingAppDelegate.swift; sourceTree = "<group>"; };
+		B2024BCE20674F2000148E47 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		B2287B5C2026CE5400375B68 /* BusLocations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusLocations.swift; sourceTree = "<group>"; };
 		B2287B5E2026CE7800375B68 /* Stop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stop.swift; sourceTree = "<group>"; };
 		B2287B602026D00A00375B68 /* TokyuBusHTMLRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokyuBusHTMLRepository.swift; sourceTree = "<group>"; };
@@ -108,6 +118,8 @@
 		B2287B592026CE0A00375B68 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				B2024BCC20674EDB00148E47 /* TestingAppDelegate.swift */,
+				B2024BCE20674F2000148E47 /* main.swift */,
 				354B66F91F1438BE00473CA0 /* busping.entitlements */,
 				B228FF751D9AC86E004E157E /* AppDelegate.swift */,
 				B228FF791D9AC86E004E157E /* Main.storyboard */,
@@ -134,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				B228FF771D9AC86E004E157E /* ViewController.swift */,
+				B2024BC6206744E200148E47 /* SelectBusLineTableViewController.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -172,11 +185,13 @@
 		B2BB5A202026D39C001FC7BD /* buspingTests */ = {
 			isa = PBXGroup;
 			children = (
+				B2024BCA206747C500148E47 /* TestSetupExtensions.swift */,
 				B2BB5A212026D39C001FC7BD /* TokyuBusHTMLRepositoryTests.swift */,
 				B2BB5A232026D39C001FC7BD /* Info.plist */,
 				B2897E742026D71800F70428 /* DefaultBusStopFactoryTests.swift */,
 				B2897E782026DC9600F70428 /* DefaultBusLocationFactoryTests.swift */,
 				B2897E7C2026E68900F70428 /* TokyuBusLocationCheckerTests.swift */,
+				B2024BC82067458000148E47 /* SelectBusLineTableViewControllerSpec.swift */,
 			);
 			path = buspingTests;
 			sourceTree = "<group>";
@@ -398,6 +413,8 @@
 				"${BUILT_PRODUCTS_DIR}/BrightFutures/BrightFutures.framework",
 				"${BUILT_PRODUCTS_DIR}/Kanna/Kanna.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -405,6 +422,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BrightFutures.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kanna.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -418,13 +437,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2024BC7206744E200148E47 /* SelectBusLineTableViewController.swift in Sources */,
 				B2287B612026D00A00375B68 /* TokyuBusHTMLRepository.swift in Sources */,
 				B2897E732026D6F600F70428 /* DefaultBusStopFactory.swift in Sources */,
 				B2287B5D2026CE5400375B68 /* BusLocations.swift in Sources */,
 				B228FF781D9AC86E004E157E /* ViewController.swift in Sources */,
 				B2897E7B2026E66D00F70428 /* TokyuBusLocationChecker.swift in Sources */,
+				B2024BCF20674F2000148E47 /* main.swift in Sources */,
 				B228FF761D9AC86E004E157E /* AppDelegate.swift in Sources */,
 				B2897E772026DB4600F70428 /* DefaultBusLocationFactory.swift in Sources */,
+				B2024BD020674F4000148E47 /* TestingAppDelegate.swift in Sources */,
 				B2287B5F2026CE7800375B68 /* Stop.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -433,6 +455,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2024BC92067458000148E47 /* SelectBusLineTableViewControllerSpec.swift in Sources */,
+				B2024BCB206747C500148E47 /* TestSetupExtensions.swift in Sources */,
 				B2897E7D2026E68900F70428 /* TokyuBusLocationCheckerTests.swift in Sources */,
 				B2897E752026D71800F70428 /* DefaultBusStopFactoryTests.swift in Sources */,
 				B2897E792026DC9600F70428 /* DefaultBusLocationFactoryTests.swift in Sources */,

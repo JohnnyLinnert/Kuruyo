@@ -10,7 +10,6 @@
 import UIKit
 import UserNotifications
 
-@UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
@@ -18,6 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        window = UIWindow()
+        window?.rootViewController = SelectBusLineTableViewController()
+        window?.makeKeyAndVisible()
         
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert,.sound,.badge]){
             (granted,error) in
