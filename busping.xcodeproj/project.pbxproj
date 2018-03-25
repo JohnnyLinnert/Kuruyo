@@ -16,19 +16,11 @@
 		B2024BD020674F4000148E47 /* TestingAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2024BCC20674EDB00148E47 /* TestingAppDelegate.swift */; };
 		B2287B5D2026CE5400375B68 /* BusLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2287B5C2026CE5400375B68 /* BusLocations.swift */; };
 		B2287B5F2026CE7800375B68 /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2287B5E2026CE7800375B68 /* Stop.swift */; };
-		B2287B612026D00A00375B68 /* TokyuBusHTMLRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2287B602026D00A00375B68 /* TokyuBusHTMLRepository.swift */; };
 		B228FF761D9AC86E004E157E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B228FF751D9AC86E004E157E /* AppDelegate.swift */; };
 		B228FF781D9AC86E004E157E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B228FF771D9AC86E004E157E /* ViewController.swift */; };
 		B228FF7B1D9AC86E004E157E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B228FF791D9AC86E004E157E /* Main.storyboard */; };
 		B228FF7D1D9AC86E004E157E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B228FF7C1D9AC86E004E157E /* Assets.xcassets */; };
 		B228FF801D9AC86E004E157E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B228FF7E1D9AC86E004E157E /* LaunchScreen.storyboard */; };
-		B2897E732026D6F600F70428 /* DefaultBusStopFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2897E722026D6F600F70428 /* DefaultBusStopFactory.swift */; };
-		B2897E752026D71800F70428 /* DefaultBusStopFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2897E742026D71800F70428 /* DefaultBusStopFactoryTests.swift */; };
-		B2897E772026DB4600F70428 /* DefaultBusLocationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2897E762026DB4600F70428 /* DefaultBusLocationFactory.swift */; };
-		B2897E792026DC9600F70428 /* DefaultBusLocationFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2897E782026DC9600F70428 /* DefaultBusLocationFactoryTests.swift */; };
-		B2897E7B2026E66D00F70428 /* TokyuBusLocationChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2897E7A2026E66D00F70428 /* TokyuBusLocationChecker.swift */; };
-		B2897E7D2026E68900F70428 /* TokyuBusLocationCheckerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2897E7C2026E68900F70428 /* TokyuBusLocationCheckerTests.swift */; };
-		B2BB5A222026D39C001FC7BD /* TokyuBusHTMLRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BB5A212026D39C001FC7BD /* TokyuBusHTMLRepositoryTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,7 +47,6 @@
 		B2024BCE20674F2000148E47 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		B2287B5C2026CE5400375B68 /* BusLocations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusLocations.swift; sourceTree = "<group>"; };
 		B2287B5E2026CE7800375B68 /* Stop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stop.swift; sourceTree = "<group>"; };
-		B2287B602026D00A00375B68 /* TokyuBusHTMLRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokyuBusHTMLRepository.swift; sourceTree = "<group>"; };
 		B228FF721D9AC86E004E157E /* busping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = busping.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B228FF751D9AC86E004E157E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B228FF771D9AC86E004E157E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,14 +54,7 @@
 		B228FF7C1D9AC86E004E157E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B228FF7F1D9AC86E004E157E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B228FF811D9AC86E004E157E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B2897E722026D6F600F70428 /* DefaultBusStopFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultBusStopFactory.swift; sourceTree = "<group>"; };
-		B2897E742026D71800F70428 /* DefaultBusStopFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultBusStopFactoryTests.swift; sourceTree = "<group>"; };
-		B2897E762026DB4600F70428 /* DefaultBusLocationFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultBusLocationFactory.swift; sourceTree = "<group>"; };
-		B2897E782026DC9600F70428 /* DefaultBusLocationFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultBusLocationFactoryTests.swift; sourceTree = "<group>"; };
-		B2897E7A2026E66D00F70428 /* TokyuBusLocationChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokyuBusLocationChecker.swift; sourceTree = "<group>"; };
-		B2897E7C2026E68900F70428 /* TokyuBusLocationCheckerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokyuBusLocationCheckerTests.swift; sourceTree = "<group>"; };
 		B2BB5A1F2026D39C001FC7BD /* buspingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = buspingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B2BB5A212026D39C001FC7BD /* TokyuBusHTMLRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokyuBusHTMLRepositoryTests.swift; sourceTree = "<group>"; };
 		B2BB5A232026D39C001FC7BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3D415A24FEFE170A3EA455D /* Pods-buspingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-buspingTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-buspingTests/Pods-buspingTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -134,10 +118,6 @@
 			children = (
 				B2287B5C2026CE5400375B68 /* BusLocations.swift */,
 				B2287B5E2026CE7800375B68 /* Stop.swift */,
-				B2287B602026D00A00375B68 /* TokyuBusHTMLRepository.swift */,
-				B2897E722026D6F600F70428 /* DefaultBusStopFactory.swift */,
-				B2897E762026DB4600F70428 /* DefaultBusLocationFactory.swift */,
-				B2897E7A2026E66D00F70428 /* TokyuBusLocationChecker.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -186,11 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				B2024BCA206747C500148E47 /* TestSetupExtensions.swift */,
-				B2BB5A212026D39C001FC7BD /* TokyuBusHTMLRepositoryTests.swift */,
 				B2BB5A232026D39C001FC7BD /* Info.plist */,
-				B2897E742026D71800F70428 /* DefaultBusStopFactoryTests.swift */,
-				B2897E782026DC9600F70428 /* DefaultBusLocationFactoryTests.swift */,
-				B2897E7C2026E68900F70428 /* TokyuBusLocationCheckerTests.swift */,
 				B2024BC82067458000148E47 /* SelectBusLineTableViewControllerSpec.swift */,
 			);
 			path = buspingTests;
@@ -438,14 +414,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2024BC7206744E200148E47 /* SelectBusLineTableViewController.swift in Sources */,
-				B2287B612026D00A00375B68 /* TokyuBusHTMLRepository.swift in Sources */,
-				B2897E732026D6F600F70428 /* DefaultBusStopFactory.swift in Sources */,
 				B2287B5D2026CE5400375B68 /* BusLocations.swift in Sources */,
 				B228FF781D9AC86E004E157E /* ViewController.swift in Sources */,
-				B2897E7B2026E66D00F70428 /* TokyuBusLocationChecker.swift in Sources */,
 				B2024BCF20674F2000148E47 /* main.swift in Sources */,
 				B228FF761D9AC86E004E157E /* AppDelegate.swift in Sources */,
-				B2897E772026DB4600F70428 /* DefaultBusLocationFactory.swift in Sources */,
 				B2024BD020674F4000148E47 /* TestingAppDelegate.swift in Sources */,
 				B2287B5F2026CE7800375B68 /* Stop.swift in Sources */,
 			);
@@ -457,10 +429,6 @@
 			files = (
 				B2024BC92067458000148E47 /* SelectBusLineTableViewControllerSpec.swift in Sources */,
 				B2024BCB206747C500148E47 /* TestSetupExtensions.swift in Sources */,
-				B2897E7D2026E68900F70428 /* TokyuBusLocationCheckerTests.swift in Sources */,
-				B2897E752026D71800F70428 /* DefaultBusStopFactoryTests.swift in Sources */,
-				B2897E792026DC9600F70428 /* DefaultBusLocationFactoryTests.swift in Sources */,
-				B2BB5A222026D39C001FC7BD /* TokyuBusHTMLRepositoryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
