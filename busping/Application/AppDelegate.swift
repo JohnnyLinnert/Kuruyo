@@ -14,26 +14,41 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var token: String?
+    var router: Router
+    
+    convenience override init() {
+        let navigationRouter = NavigationRouter()
+        self.init(router: navigationRouter)
+    }
+    
+    init(router: Router) {
+        self.router = router
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        window = UIWindow()
-        window?.rootViewController = SelectBusLineTableViewController()
-        window?.makeKeyAndVisible()
+        setupInitialViewController()
         
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert,.sound,.badge]){
             (granted,error) in
-            if granted{
-                application.registerForRemoteNotifications()
+            if granted {
+                DispatchQueue.main.async {
+                    application.registerForRemoteNotifications()
+                }
             } else {
                 print("User Notification permission denied: \(error?.localizedDescription ?? "default error")")
-                //print("User Notification permission denied: \(error?.localizedDescription)") was the original code, not 100% sure of the implications in the changes I made, but we'll see!
             }
-            
         }
         
         return true
+    }
+    
+    func setupInitialViewController() {
+        window = UIWindow()
+        router.showRootViewController()
+        window?.rootViewController = router.rootViewController
+        window?.makeKeyAndVisible()
     }
     
     //code to make a token string

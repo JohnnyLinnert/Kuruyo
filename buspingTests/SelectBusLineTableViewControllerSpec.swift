@@ -4,11 +4,13 @@ import Quick
 @testable import busping
 class SelectBusLineTableViewControllerSpec: QuickSpec {
     var vc: SelectBusLineTableViewController!
+    var fakeRouter: FakeNavigationRouter!
     
     override func spec() {
         
         beforeEach {
-            self.vc = SelectBusLineTableViewController()
+            self.fakeRouter = FakeNavigationRouter()
+            self.vc = SelectBusLineTableViewController(router: self.fakeRouter)
             let _ = UINavigationController(rootViewController: self.vc)
             self.vc.view.setNeedsLayout()
             self.vc.viewDidLoad()
@@ -23,9 +25,17 @@ class SelectBusLineTableViewControllerSpec: QuickSpec {
                 
                 expect(cell.textLabel?.text).to(equal("恵32"))
             }
+            
+            context("when the user selects a bus line") {
+                
+                it("should display the bus stop table view ctrl for that line") {
+                    let indexPath = IndexPath(row: 0, section: 0)
+                    self.vc.tableView(self.vc.tableView, didSelectRowAt: indexPath)
+                    
+                    
+                    expect(self.fakeRouter.showBusStopTableViewControllerWasCalled).to(beTrue())
+                }
+            }
         }
-        
     }
 }
-
-

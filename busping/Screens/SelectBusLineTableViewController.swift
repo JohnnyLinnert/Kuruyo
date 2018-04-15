@@ -1,17 +1,10 @@
-//
-//  SelectBusLineTableViewController.swift
-//  busping
-//
-//  Created by Johnny Linnert on 2018/03/25.
-//  Copyright © 2018 Johnny Linnert. All rights reserved.
-//
-
 import Foundation
 import UIKit
 
 class SelectBusLineTableViewController : UITableViewController {
-    
-    init() {
+    var router: Router
+    init(router: Router) {
+        self.router = router
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -27,7 +20,6 @@ class SelectBusLineTableViewController : UITableViewController {
         tableView.reloadData()
     }
     
-    
     //MARK: - Table View Data Source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -42,5 +34,10 @@ class SelectBusLineTableViewController : UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: UITableViewCell.self), for: indexPath)
         cell.textLabel?.text = "恵32"
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // Create or show a new view
+        router.showBusStopTableViewController()
     }
 }
