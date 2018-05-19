@@ -18,7 +18,9 @@ class NavigationRouter: Router {
     }
     
     func showBusStopTableViewController() {
-        let newTableViewCtrl = SelectBusStopTableViewController()
+        let http = KuruyoHTTP()
+        let repo = TokyuBusStopRepository(http: http)
+        let newTableViewCtrl = SelectBusStopTableViewController(busStopRepo: repo)
         rootViewController?.pushViewController(
             newTableViewCtrl,
             animated: true

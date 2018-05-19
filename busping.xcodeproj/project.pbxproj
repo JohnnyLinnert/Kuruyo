@@ -25,6 +25,9 @@
 		B250FDA6208300F5000CBAAB /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B250FDA5208300F5000CBAAB /* NavigationRouter.swift */; };
 		B250FDA8208304A4000CBAAB /* SelectBusStopTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B250FDA7208304A4000CBAAB /* SelectBusStopTableViewController.swift */; };
 		B250FDAA208307D4000CBAAB /* FakeNavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B250FDA9208307D4000CBAAB /* FakeNavigationRouter.swift */; };
+		B2BBC26520AFE3F900EAD13B /* SelectBusStopTableViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BBC26420AFE3F900EAD13B /* SelectBusStopTableViewControllerSpec.swift */; };
+		B2BBC26720AFE84B00EAD13B /* BusStopRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BBC26620AFE84B00EAD13B /* BusStopRepository.swift */; };
+		B2BBC26920AFEEAA00EAD13B /* FakeKuruyoHTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BBC26820AFEEAA00EAD13B /* FakeKuruyoHTTP.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +67,9 @@
 		B250FDA9208307D4000CBAAB /* FakeNavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeNavigationRouter.swift; sourceTree = "<group>"; };
 		B2BB5A1F2026D39C001FC7BD /* buspingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = buspingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2BB5A232026D39C001FC7BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B2BBC26420AFE3F900EAD13B /* SelectBusStopTableViewControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBusStopTableViewControllerSpec.swift; sourceTree = "<group>"; };
+		B2BBC26620AFE84B00EAD13B /* BusStopRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusStopRepository.swift; sourceTree = "<group>"; };
+		B2BBC26820AFEEAA00EAD13B /* FakeKuruyoHTTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeKuruyoHTTP.swift; sourceTree = "<group>"; };
 		B3D415A24FEFE170A3EA455D /* Pods-buspingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-buspingTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-buspingTests/Pods-buspingTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -127,6 +133,7 @@
 				B2287B5C2026CE5400375B68 /* BusLocations.swift */,
 				B2287B5E2026CE7800375B68 /* Stop.swift */,
 				B250FDA5208300F5000CBAAB /* NavigationRouter.swift */,
+				B2BBC26620AFE84B00EAD13B /* BusStopRepository.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -180,6 +187,8 @@
 				B2024BC82067458000148E47 /* SelectBusLineTableViewControllerSpec.swift */,
 				B250FDA32082FAD9000CBAAB /* AppDelegateSpec.swift */,
 				B250FDA9208307D4000CBAAB /* FakeNavigationRouter.swift */,
+				B2BBC26420AFE3F900EAD13B /* SelectBusStopTableViewControllerSpec.swift */,
+				B2BBC26820AFEEAA00EAD13B /* FakeKuruyoHTTP.swift */,
 			);
 			path = buspingTests;
 			sourceTree = "<group>";
@@ -425,6 +434,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2BBC26720AFE84B00EAD13B /* BusStopRepository.swift in Sources */,
 				B2024BC7206744E200148E47 /* SelectBusLineTableViewController.swift in Sources */,
 				B2287B5D2026CE5400375B68 /* BusLocations.swift in Sources */,
 				B250FDA6208300F5000CBAAB /* NavigationRouter.swift in Sources */,
@@ -443,6 +453,8 @@
 			files = (
 				B250FDA42082FAD9000CBAAB /* AppDelegateSpec.swift in Sources */,
 				B250FDAA208307D4000CBAAB /* FakeNavigationRouter.swift in Sources */,
+				B2BBC26520AFE3F900EAD13B /* SelectBusStopTableViewControllerSpec.swift in Sources */,
+				B2BBC26920AFEEAA00EAD13B /* FakeKuruyoHTTP.swift in Sources */,
 				B2024BC92067458000148E47 /* SelectBusLineTableViewControllerSpec.swift in Sources */,
 				B2024BCB206747C500148E47 /* TestSetupExtensions.swift in Sources */,
 			);
