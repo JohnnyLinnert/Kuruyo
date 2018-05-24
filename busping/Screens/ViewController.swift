@@ -10,8 +10,8 @@
 // See below notes about the current status and next steps for this project
 
 import UIKit
-import Alamofire
-import Kanna
+//import Alamofire
+//import Kanna
 
 class ViewController: UIViewController {
     @IBAction func sendNotification(_ sender: Any) {

@@ -3,15 +3,11 @@ platform :ios, '10.0'
 use_frameworks!
 
 target 'busping' do
-    pod 'BrightFutures', '6.0.0'
-    pod 'Alamofire', '~> 4.5'
-    pod ‘Kanna', :git => 'https://github.com/tid-kijyun/Kanna', :branch => ‘feature/v4.0.0’
+    pod 'BrightFutures', '6.0.1'
 end
 
 target 'buspingTests' do
-    pod 'BrightFutures', '6.0.0'
-    pod 'Alamofire', '~> 4.5'
+    pod 'BrightFutures', '6.0.1'
     pod 'Quick'
     pod 'Nimble'
-    pod ‘Kanna', :git => 'https://github.com/tid-kijyun/Kanna', :branch => ‘feature/v4.0.0’
 end

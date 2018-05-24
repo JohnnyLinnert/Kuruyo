@@ -11,6 +11,7 @@ class SelectBusStopTableViewControllerSpec: QuickSpec {
     
     func createViewController() {
         vc = SelectBusStopTableViewController(busStopRepo: busStopRepository)
+        vc.viewDidLoad()
     }
     
     override func spec() {
@@ -22,22 +23,37 @@ class SelectBusStopTableViewControllerSpec: QuickSpec {
         
         describe("the BusStopTableViewController") {
             it("should display a list of bus stops") {
-                let json = [
-                    "stops": [
-                        "name": "恵比寿駅"
+                let jsonString = """
+                    [
+                        {
+                            "stops": [
+                                {
+                                    "name": "恵比寿駅"
+                                }
+                            ]
+                        }
                     ]
-                ]
-                let fakeData = try! JSONSerialization.data(withJSONObject: json, options: .prettyPrinted)
+                """
+                let fakeData = try! JSONSerialization.data(withJSONObject: jsonString.toJSON()!, options: .prettyPrinted)
                 let fakePromise = Promise<Data?, NSError>()
-                self.fakeKuruyoHTTP.get_path_returnValue = fakePromise.future
                 fakePromise.success(fakeData)
-                
+                self.fakeKuruyoHTTP.get_path_returnValue = fakePromise.future
+
+
                 self.createViewController()
-                
+
+                expect(self.vc.allStops).toEventuallyNot(beNil())
                 let indexPath = IndexPath(row: 0, section: 0)
                 let cell = self.vc.tableView(self.vc.tableView, cellForRowAt: indexPath)
-                expect(cell.textLabel?.text).to(equal("恵比寿駅"))
+                expect(cell.textLabel?.text).toEventually(equal("恵比寿駅"))
             }
         }
+    }
+}
+
+extension String {
+    func toJSON() -> Any? {
+        guard let data = self.data(using: .utf8, allowLossyConversion: false) else { return nil }
+        return try? JSONSerialization.jsonObject(with: data, options: .mutableContainers)
     }
 }
