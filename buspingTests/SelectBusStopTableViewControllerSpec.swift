@@ -23,23 +23,6 @@ class SelectBusStopTableViewControllerSpec: QuickSpec {
         
         describe("the BusStopTableViewController") {
             it("should display a list of bus stops") {
-                let jsonString = """
-                    [
-                        {
-                            "stops": [
-                                {
-                                    "name": "恵比寿駅"
-                                }
-                            ]
-                        }
-                    ]
-                """
-                let fakeData = try! JSONSerialization.data(withJSONObject: jsonString.toJSON()!, options: .prettyPrinted)
-                let fakePromise = Promise<Data?, NSError>()
-                fakePromise.success(fakeData)
-                self.fakeKuruyoHTTP.get_path_returnValue = fakePromise.future
-
-
                 self.createViewController()
 
                 expect(self.vc.allStops).toEventuallyNot(beNil())

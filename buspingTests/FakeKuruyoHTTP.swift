@@ -4,10 +4,21 @@ import BrightFutures
 @testable import busping
 
 class FakeKuruyoHTTP: HTTP {
-    var get_path_arg: String!
-    var get_path_returnValue: Future<Data?, NSError>!
     func get(_ path: String, _ line: String) -> Future<Data?, NSError> {
-        get_path_arg = path
-        return get_path_returnValue
+        let jsonString = """
+                    [
+                        {
+                            "stops": [
+                                {
+                                    "name": "恵比寿駅"
+                                }
+                            ]
+                        }
+                    ]
+                """
+        let fakeData = try! JSONSerialization.data(withJSONObject: jsonString.toJSON()!, options: .prettyPrinted)
+        let fakePromise = Promise<Data?, NSError>()
+        fakePromise.success(fakeData)
+        return fakePromise.future
     }
 }
