@@ -4,10 +4,12 @@ use_frameworks!
 
 target 'busping' do
     pod 'BrightFutures', '6.0.1'
+    pod 'Gloss', '~> 2.0'
 end
 
 target 'buspingTests' do
     pod 'BrightFutures', '6.0.1'
+    pod 'Gloss', '~> 2.0'
     pod 'Quick'
     pod 'Nimble'
 end

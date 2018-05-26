@@ -20,16 +20,8 @@ class TokyuBusStopRepository: BusStopRepository {
 
             if let data = data {
                 do {
-                    let stopsDictionary = try decoder.decode(Array<Dictionary<String, Array<Dictionary<String, String>>>>.self, from: data)
-
-                    var allStops = [Stop]()
-                    for stop in stopsDictionary[0]["stops"]! {
-                        let name = stop["name"]
-                        let newStopObject = Stop(name: name!)
-                        allStops.append(newStopObject)
-                    }
-                    promise.success(allStops)
-
+                    let stopsResponse = try decoder.decode([StopsResponse].self, from: data)
+                    promise.success(stopsResponse[0].stops)
                 } catch {
                     print("error", error)
                 }

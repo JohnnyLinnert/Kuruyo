@@ -11,6 +11,7 @@
 		372FF896456C7094481B60A7 /* Pods_busping.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42FA1266424FCA93F00882A9 /* Pods_busping.framework */; };
 		B120C8B020B8F689006BDB99 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B120C8AF20B8F689006BDB99 /* StringExtensions.swift */; };
 		B120C8B520B8F846006BDB99 /* KuruyoHTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = B120C8B420B8F846006BDB99 /* KuruyoHTTP.swift */; };
+		B121F70020B904E90095FC7F /* StopsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B121F6FF20B904E90095FC7F /* StopsResponse.swift */; };
 		B2024BC7206744E200148E47 /* SelectBusLineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2024BC6206744E200148E47 /* SelectBusLineTableViewController.swift */; };
 		B2024BC92067458000148E47 /* SelectBusLineTableViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2024BC82067458000148E47 /* SelectBusLineTableViewControllerSpec.swift */; };
 		B2024BCB206747C500148E47 /* TestSetupExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2024BCA206747C500148E47 /* TestSetupExtensions.swift */; };
@@ -51,6 +52,7 @@
 		989F46A539567D0BCFD7A85C /* Pods-busping.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-busping.debug.xcconfig"; path = "Pods/Target Support Files/Pods-busping/Pods-busping.debug.xcconfig"; sourceTree = "<group>"; };
 		B120C8AF20B8F689006BDB99 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		B120C8B420B8F846006BDB99 /* KuruyoHTTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KuruyoHTTP.swift; sourceTree = "<group>"; };
+		B121F6FF20B904E90095FC7F /* StopsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopsResponse.swift; sourceTree = "<group>"; };
 		B2024BC6206744E200148E47 /* SelectBusLineTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBusLineTableViewController.swift; sourceTree = "<group>"; };
 		B2024BC82067458000148E47 /* SelectBusLineTableViewControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBusLineTableViewControllerSpec.swift; sourceTree = "<group>"; };
 		B2024BCA206747C500148E47 /* TestSetupExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestSetupExtensions.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				B250FDA5208300F5000CBAAB /* NavigationRouter.swift */,
 				B2BBC26620AFE84B00EAD13B /* BusStopRepository.swift */,
 				B120C8B420B8F846006BDB99 /* KuruyoHTTP.swift */,
+				B121F6FF20B904E90095FC7F /* StopsResponse.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -395,11 +398,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-busping/Pods-busping-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/BrightFutures/BrightFutures.framework",
+				"${BUILT_PRODUCTS_DIR}/Gloss/Gloss.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BrightFutures.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Gloss.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -433,6 +438,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-buspingTests/Pods-buspingTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/BrightFutures/BrightFutures.framework",
+				"${BUILT_PRODUCTS_DIR}/Gloss/Gloss.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
 				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
@@ -440,6 +446,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BrightFutures.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Gloss.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
@@ -462,6 +469,7 @@
 				B120C8B520B8F846006BDB99 /* KuruyoHTTP.swift in Sources */,
 				B250FDA6208300F5000CBAAB /* NavigationRouter.swift in Sources */,
 				B228FF781D9AC86E004E157E /* ViewController.swift in Sources */,
+				B121F70020B904E90095FC7F /* StopsResponse.swift in Sources */,
 				B250FDA8208304A4000CBAAB /* SelectBusStopTableViewController.swift in Sources */,
 				B2024BCF20674F2000148E47 /* main.swift in Sources */,
 				B228FF761D9AC86E004E157E /* AppDelegate.swift in Sources */,
