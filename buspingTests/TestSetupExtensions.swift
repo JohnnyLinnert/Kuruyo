@@ -1,13 +1,11 @@
 import UIKit
 
-//swiftlint:disable cyclomatic_complexity
-//swiftlint:disable control_statement
 extension UIViewController {
     func setupForUnitTesting() {
         view.setNeedsLayout()
     }
 
-    func containsLabel(withText searchText: String) -> Bool {
+    func hasLabel(withText searchText: String) -> Bool {
         return view.hasLabel(withText: searchText)
     }
 
@@ -18,6 +16,24 @@ extension UIViewController {
 
 extension UIView {
     func hasLabel(withText searchText: String) -> Bool {
+
+        if let tableView = self as? UITableView {
+            let numberOfSections = tableView.numberOfSections
+            for section in 0..<numberOfSections {
+                let numberOfRows = tableView.numberOfRows(inSection: section)
+                for item in 0..<numberOfRows {
+                    let indexPath = IndexPath(item: item, section: section)
+                    if let cell = tableView.dataSource?.tableView(tableView, cellForRowAt: indexPath) {
+                        if (cell.subviews.count) > 0 {
+                            if (cell.hasLabel(withText: searchText)) {
+                                return true
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
         for subview in subviews {
             if let label = subview as? UILabel {
                 if label.text == searchText {

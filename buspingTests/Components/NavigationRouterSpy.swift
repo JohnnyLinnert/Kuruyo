@@ -3,7 +3,7 @@ import UIKit
 
 @testable import busping
 
-class FakeNavigationRouter: Router {
+class NavigationRouterSpy: Router {
     var rootViewController: UINavigationController?
     
     var showRootViewControllerWasCalled = false

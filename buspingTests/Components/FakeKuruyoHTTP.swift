@@ -4,7 +4,7 @@ import BrightFutures
 @testable import busping
 
 class FakeKuruyoHTTP: HTTP {
-    func get(_ path: String, _ line: String) -> Future<Data?, NSError> {
+    func get(_ path: String, forLine busLine: String) -> Future<Data?, NSError> {
         let jsonString = """
                     [
                         {

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1FC235E67CF28E42F98672D5 /* Pods_buspingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6469BC430A322FF2D0C3FD3B /* Pods_buspingTests.framework */; };
 		372FF896456C7094481B60A7 /* Pods_busping.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42FA1266424FCA93F00882A9 /* Pods_busping.framework */; };
+		B120C8B020B8F689006BDB99 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B120C8AF20B8F689006BDB99 /* StringExtensions.swift */; };
+		B120C8B520B8F846006BDB99 /* KuruyoHTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = B120C8B420B8F846006BDB99 /* KuruyoHTTP.swift */; };
 		B2024BC7206744E200148E47 /* SelectBusLineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2024BC6206744E200148E47 /* SelectBusLineTableViewController.swift */; };
 		B2024BC92067458000148E47 /* SelectBusLineTableViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2024BC82067458000148E47 /* SelectBusLineTableViewControllerSpec.swift */; };
 		B2024BCB206747C500148E47 /* TestSetupExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2024BCA206747C500148E47 /* TestSetupExtensions.swift */; };
@@ -24,7 +26,7 @@
 		B250FDA42082FAD9000CBAAB /* AppDelegateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B250FDA32082FAD9000CBAAB /* AppDelegateSpec.swift */; };
 		B250FDA6208300F5000CBAAB /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B250FDA5208300F5000CBAAB /* NavigationRouter.swift */; };
 		B250FDA8208304A4000CBAAB /* SelectBusStopTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B250FDA7208304A4000CBAAB /* SelectBusStopTableViewController.swift */; };
-		B250FDAA208307D4000CBAAB /* FakeNavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B250FDA9208307D4000CBAAB /* FakeNavigationRouter.swift */; };
+		B250FDAA208307D4000CBAAB /* NavigationRouterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B250FDA9208307D4000CBAAB /* NavigationRouterSpy.swift */; };
 		B2BBC26520AFE3F900EAD13B /* SelectBusStopTableViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BBC26420AFE3F900EAD13B /* SelectBusStopTableViewControllerSpec.swift */; };
 		B2BBC26720AFE84B00EAD13B /* BusStopRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BBC26620AFE84B00EAD13B /* BusStopRepository.swift */; };
 		B2BBC26920AFEEAA00EAD13B /* FakeKuruyoHTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BBC26820AFEEAA00EAD13B /* FakeKuruyoHTTP.swift */; };
@@ -47,6 +49,8 @@
 		4B93116794B699A9A28A4668 /* Pods-busping.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-busping.release.xcconfig"; path = "Pods/Target Support Files/Pods-busping/Pods-busping.release.xcconfig"; sourceTree = "<group>"; };
 		6469BC430A322FF2D0C3FD3B /* Pods_buspingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_buspingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		989F46A539567D0BCFD7A85C /* Pods-busping.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-busping.debug.xcconfig"; path = "Pods/Target Support Files/Pods-busping/Pods-busping.debug.xcconfig"; sourceTree = "<group>"; };
+		B120C8AF20B8F689006BDB99 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		B120C8B420B8F846006BDB99 /* KuruyoHTTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KuruyoHTTP.swift; sourceTree = "<group>"; };
 		B2024BC6206744E200148E47 /* SelectBusLineTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBusLineTableViewController.swift; sourceTree = "<group>"; };
 		B2024BC82067458000148E47 /* SelectBusLineTableViewControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBusLineTableViewControllerSpec.swift; sourceTree = "<group>"; };
 		B2024BCA206747C500148E47 /* TestSetupExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestSetupExtensions.swift; sourceTree = "<group>"; };
@@ -64,7 +68,7 @@
 		B250FDA32082FAD9000CBAAB /* AppDelegateSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateSpec.swift; sourceTree = "<group>"; };
 		B250FDA5208300F5000CBAAB /* NavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRouter.swift; sourceTree = "<group>"; };
 		B250FDA7208304A4000CBAAB /* SelectBusStopTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBusStopTableViewController.swift; sourceTree = "<group>"; };
-		B250FDA9208307D4000CBAAB /* FakeNavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeNavigationRouter.swift; sourceTree = "<group>"; };
+		B250FDA9208307D4000CBAAB /* NavigationRouterSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRouterSpy.swift; sourceTree = "<group>"; };
 		B2BB5A1F2026D39C001FC7BD /* buspingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = buspingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2BB5A232026D39C001FC7BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2BBC26420AFE3F900EAD13B /* SelectBusStopTableViewControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBusStopTableViewControllerSpec.swift; sourceTree = "<group>"; };
@@ -113,6 +117,32 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B120C8B120B8F69E006BDB99 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				B2024BC82067458000148E47 /* SelectBusLineTableViewControllerSpec.swift */,
+				B2BBC26420AFE3F900EAD13B /* SelectBusStopTableViewControllerSpec.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		B120C8B220B8F6AE006BDB99 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				B250FDA9208307D4000CBAAB /* NavigationRouterSpy.swift */,
+				B2BBC26820AFEEAA00EAD13B /* FakeKuruyoHTTP.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		B120C8B320B8F6C0006BDB99 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				B250FDA32082FAD9000CBAAB /* AppDelegateSpec.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
 		B2287B592026CE0A00375B68 /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +164,7 @@
 				B2287B5E2026CE7800375B68 /* Stop.swift */,
 				B250FDA5208300F5000CBAAB /* NavigationRouter.swift */,
 				B2BBC26620AFE84B00EAD13B /* BusStopRepository.swift */,
+				B120C8B420B8F846006BDB99 /* KuruyoHTTP.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -182,13 +213,12 @@
 		B2BB5A202026D39C001FC7BD /* buspingTests */ = {
 			isa = PBXGroup;
 			children = (
+				B120C8B320B8F6C0006BDB99 /* Application */,
+				B120C8B220B8F6AE006BDB99 /* Components */,
+				B120C8B120B8F69E006BDB99 /* Screens */,
 				B2024BCA206747C500148E47 /* TestSetupExtensions.swift */,
 				B2BB5A232026D39C001FC7BD /* Info.plist */,
-				B2024BC82067458000148E47 /* SelectBusLineTableViewControllerSpec.swift */,
-				B250FDA32082FAD9000CBAAB /* AppDelegateSpec.swift */,
-				B250FDA9208307D4000CBAAB /* FakeNavigationRouter.swift */,
-				B2BBC26420AFE3F900EAD13B /* SelectBusStopTableViewControllerSpec.swift */,
-				B2BBC26820AFEEAA00EAD13B /* FakeKuruyoHTTP.swift */,
+				B120C8AF20B8F689006BDB99 /* StringExtensions.swift */,
 			);
 			path = buspingTests;
 			sourceTree = "<group>";
@@ -429,6 +459,7 @@
 				B2BBC26720AFE84B00EAD13B /* BusStopRepository.swift in Sources */,
 				B2024BC7206744E200148E47 /* SelectBusLineTableViewController.swift in Sources */,
 				B2287B5D2026CE5400375B68 /* BusLocations.swift in Sources */,
+				B120C8B520B8F846006BDB99 /* KuruyoHTTP.swift in Sources */,
 				B250FDA6208300F5000CBAAB /* NavigationRouter.swift in Sources */,
 				B228FF781D9AC86E004E157E /* ViewController.swift in Sources */,
 				B250FDA8208304A4000CBAAB /* SelectBusStopTableViewController.swift in Sources */,
@@ -444,8 +475,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B250FDA42082FAD9000CBAAB /* AppDelegateSpec.swift in Sources */,
-				B250FDAA208307D4000CBAAB /* FakeNavigationRouter.swift in Sources */,
+				B250FDAA208307D4000CBAAB /* NavigationRouterSpy.swift in Sources */,
 				B2BBC26520AFE3F900EAD13B /* SelectBusStopTableViewControllerSpec.swift in Sources */,
+				B120C8B020B8F689006BDB99 /* StringExtensions.swift in Sources */,
 				B2BBC26920AFEEAA00EAD13B /* FakeKuruyoHTTP.swift in Sources */,
 				B2024BC92067458000148E47 /* SelectBusLineTableViewControllerSpec.swift in Sources */,
 				B2024BCB206747C500148E47 /* TestSetupExtensions.swift in Sources */,

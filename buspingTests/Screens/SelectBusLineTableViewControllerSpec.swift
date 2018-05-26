@@ -4,13 +4,13 @@ import Quick
 @testable import busping
 class SelectBusLineTableViewControllerSpec: QuickSpec {
     var vc: SelectBusLineTableViewController!
-    var fakeRouter: FakeNavigationRouter!
+    var routerSpy: NavigationRouterSpy!
     
     override func spec() {
         
         beforeEach {
-            self.fakeRouter = FakeNavigationRouter()
-            self.vc = SelectBusLineTableViewController(router: self.fakeRouter)
+            self.routerSpy = NavigationRouterSpy()
+            self.vc = SelectBusLineTableViewController(router: self.routerSpy)
             let _ = UINavigationController(rootViewController: self.vc)
             self.vc.view.setNeedsLayout()
             self.vc.viewDidLoad()
@@ -33,7 +33,7 @@ class SelectBusLineTableViewControllerSpec: QuickSpec {
                     self.vc.tableView(self.vc.tableView, didSelectRowAt: indexPath)
                     
                     
-                    expect(self.fakeRouter.showBusStopTableViewControllerWasCalled).to(beTrue())
+                    expect(self.routerSpy.showBusStopTableViewControllerWasCalled).to(beTrue())
                 }
             }
         }
