@@ -2,7 +2,8 @@ import Foundation
 import UIKit
 
 class SelectBusLineTableViewController : UITableViewController {
-    var router: Router
+    private var router: Router
+
     init(router: Router) {
         self.router = router
         super.init(nibName: nil, bundle: nil)

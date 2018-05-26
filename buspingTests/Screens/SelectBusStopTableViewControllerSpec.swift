@@ -26,8 +26,6 @@ class SelectBusStopTableViewControllerSpec: QuickSpec {
                 it("should display a list of bus stops") {
                     self.createViewController()
 
-
-                    expect(self.vc.allStops).toEventuallyNot(beNil())
                     expect(self.vc.hasLabel(withText: "恵比寿駅")).toEventually(beTrue())
                 }
             }

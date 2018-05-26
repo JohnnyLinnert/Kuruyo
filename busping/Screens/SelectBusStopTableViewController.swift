@@ -3,8 +3,8 @@ import UIKit
 import BrightFutures
 
 class SelectBusStopTableViewController: UITableViewController {
-    let busStopRepo: BusStopRepository
-    var allStops: [Stop]?
+    private let busStopRepo: BusStopRepository
+    private var allStops: [Stop]?
     
     init (busStopRepo: BusStopRepository) {
         self.busStopRepo = busStopRepo

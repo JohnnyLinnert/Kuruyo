@@ -18,13 +18,13 @@ class AppDelegateSpec: QuickSpec {
         }
         
         describe("the App Delegate") {
-            it("should display the list of bus lines on load") {
-               
-                let navCtrl = self.appDelegate.window!.rootViewController as! UINavigationController
-                expect(navCtrl.topViewController).to(beAnInstanceOf(SelectBusLineTableViewController.self))
+            context("when I open the app") {
+                it("should display the list of bus lines") {
+
+                    let navCtrl = self.appDelegate.window!.rootViewController as! UINavigationController
+                    expect(navCtrl.topViewController).to(beAnInstanceOf(SelectBusLineTableViewController.self))
+                }
             }
         }
     }
-    
-    public func testDummy() {}
 }
