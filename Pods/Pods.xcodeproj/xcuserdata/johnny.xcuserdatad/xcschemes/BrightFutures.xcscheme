@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -13,11 +13,11 @@
             buildForProfiling = "YES"
             buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '4551A02DCD158A5143D803E0FE76C4F6'
-               BlueprintName = 'BrightFutures'
-               ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'BrightFutures.framework'>
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "318EABB506B9DBF9BE89F2850739DE72"
+               BlueprintName = "BrightFutures"
+               ReferencedContainer = "container:Pods.xcodeproj"
+               BuildableName = "BrightFutures.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
