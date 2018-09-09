@@ -5,6 +5,7 @@ protocol Router {
     var rootViewController: UINavigationController? { get set }
     func showRootViewController()
     func showBusStopTableViewController()
+    func showRouteDetailScreen(fromStop: Stop, toStop: Stop, line: String)
 }
 
 class NavigationRouter: Router {
@@ -20,10 +21,15 @@ class NavigationRouter: Router {
     func showBusStopTableViewController() {
         let http = KuruyoHTTP()
         let repo = TokyuBusStopRepository(http: http)
-        let newTableViewCtrl = SelectBusStopTableViewController(busStopRepo: repo)
+        let newTableViewCtrl = SelectBusStopTableViewController(router: self, busStopRepo: repo)
         rootViewController?.pushViewController(
             newTableViewCtrl,
             animated: true
         )
+    }
+
+    func showRouteDetailScreen(fromStop: Stop, toStop: Stop, line: String) {
+        let routeDetailViewCtrl = RouteDetailViewController()
+        rootViewController?.pushViewController(routeDetailViewCtrl, animated: true)
     }
 }

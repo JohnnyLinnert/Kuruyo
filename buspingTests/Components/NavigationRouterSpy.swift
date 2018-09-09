@@ -15,4 +15,13 @@ class NavigationRouterSpy: Router {
     func showBusStopTableViewController() {
         showBusStopTableViewControllerWasCalled = true
     }
+
+    var showRouteDetailScreen_fromStopArg: Stop!
+    var showRouteDetailScreen_toStopArg: Stop!
+    var showRouteDetailScreen_lineArg: String!
+    func showRouteDetailScreen(fromStop: Stop, toStop: Stop, line: String) {
+        showRouteDetailScreen_fromStopArg = fromStop
+        showRouteDetailScreen_toStopArg = toStop
+        showRouteDetailScreen_lineArg = line
+    }
 }

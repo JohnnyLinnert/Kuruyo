@@ -11,6 +11,9 @@ class FakeKuruyoHTTP: HTTP {
                             "stops": [
                                 {
                                     "name": "恵比寿駅"
+                                },
+                                {
+                                    "name": "下通五丁目"
                                 }
                             ]
                         }
