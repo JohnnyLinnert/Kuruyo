@@ -5,6 +5,8 @@ import BrightFutures
 class SelectBusStopTableViewController: UITableViewController {
     private let busStopRepo: BusStopRepository
     private var allStops: [Stop]?
+    private var startingLocationIndexPath: IndexPath?
+    private var destinationIndexPath: IndexPath?
     
     init (busStopRepo: BusStopRepository) {
         self.busStopRepo = busStopRepo
@@ -38,10 +40,44 @@ class SelectBusStopTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: UITableViewCell.self), for: indexPath)
+        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: String(describing: UITableViewCell.self))
+        
         if let stops = allStops {
             cell.textLabel?.text = stops[indexPath.row].name
         }
+        
+        if  let startingIndexPath = startingLocationIndexPath,
+            indexPath == startingIndexPath {
+            cell.detailTextLabel?.text = "Starting Location"
+        }
+        
+        if  let destinationIndexPath = destinationIndexPath,
+            indexPath == destinationIndexPath {
+            cell.detailTextLabel?.text = "Destination"
+        }
+        
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath == startingLocationIndexPath {
+            startingLocationIndexPath = nil
+            tableView.reloadData()
+            return
+        }
+        
+        if indexPath == destinationIndexPath {
+            destinationIndexPath = nil
+            tableView.reloadData()
+            return
+        }
+        
+        if startingLocationIndexPath != nil {
+            destinationIndexPath = indexPath
+        } else {
+            startingLocationIndexPath = indexPath
+        }
+        
+        tableView.reloadData()
     }
 }

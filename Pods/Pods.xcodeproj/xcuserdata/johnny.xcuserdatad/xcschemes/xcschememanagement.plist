@@ -4,17 +4,12 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Alamofire.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>BrightFutures.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Kanna.xcscheme</key>
+		<key>Gloss.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

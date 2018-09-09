@@ -26,11 +26,11 @@
 		B228FF801D9AC86E004E157E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B228FF7E1D9AC86E004E157E /* LaunchScreen.storyboard */; };
 		B250FDA42082FAD9000CBAAB /* AppDelegateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B250FDA32082FAD9000CBAAB /* AppDelegateSpec.swift */; };
 		B250FDA6208300F5000CBAAB /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B250FDA5208300F5000CBAAB /* NavigationRouter.swift */; };
-		B250FDA8208304A4000CBAAB /* SelectBusStopTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B250FDA7208304A4000CBAAB /* SelectBusStopTableViewController.swift */; };
 		B250FDAA208307D4000CBAAB /* NavigationRouterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B250FDA9208307D4000CBAAB /* NavigationRouterSpy.swift */; };
 		B2BBC26520AFE3F900EAD13B /* SelectBusStopTableViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BBC26420AFE3F900EAD13B /* SelectBusStopTableViewControllerSpec.swift */; };
 		B2BBC26720AFE84B00EAD13B /* BusStopRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BBC26620AFE84B00EAD13B /* BusStopRepository.swift */; };
 		B2BBC26920AFEEAA00EAD13B /* FakeKuruyoHTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BBC26820AFEEAA00EAD13B /* FakeKuruyoHTTP.swift */; };
+		B2F65F6D2144E3A300FF6806 /* SelectBusStopTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B250FDA7208304A4000CBAAB /* SelectBusStopTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -238,7 +238,6 @@
 				B228FF6F1D9AC86D004E157E /* Frameworks */,
 				B228FF701D9AC86D004E157E /* Resources */,
 				D6EA921197DD1332C4DBD1B3 /* [CP] Embed Pods Frameworks */,
-				73B2BA83B427D7E067690368 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -258,7 +257,6 @@
 				B2BB5A1C2026D39C001FC7BD /* Frameworks */,
 				B2BB5A1D2026D39C001FC7BD /* Resources */,
 				E557AB08CCC8FCF5DED8ACA9 /* [CP] Embed Pods Frameworks */,
-				597CA0B48D00E5FF7991D91E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -342,36 +340,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		597CA0B48D00E5FF7991D91E /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-buspingTests/Pods-buspingTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		73B2BA83B427D7E067690368 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-busping/Pods-busping-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		D4124EE3D45D027E23271712 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -467,10 +435,10 @@
 				B2024BC7206744E200148E47 /* SelectBusLineTableViewController.swift in Sources */,
 				B2287B5D2026CE5400375B68 /* BusLocations.swift in Sources */,
 				B120C8B520B8F846006BDB99 /* KuruyoHTTP.swift in Sources */,
+				B2F65F6D2144E3A300FF6806 /* SelectBusStopTableViewController.swift in Sources */,
 				B250FDA6208300F5000CBAAB /* NavigationRouter.swift in Sources */,
 				B228FF781D9AC86E004E157E /* ViewController.swift in Sources */,
 				B121F70020B904E90095FC7F /* StopsResponse.swift in Sources */,
-				B250FDA8208304A4000CBAAB /* SelectBusStopTableViewController.swift in Sources */,
 				B2024BCF20674F2000148E47 /* main.swift in Sources */,
 				B228FF761D9AC86E004E157E /* AppDelegate.swift in Sources */,
 				B2024BD020674F4000148E47 /* TestingAppDelegate.swift in Sources */,
