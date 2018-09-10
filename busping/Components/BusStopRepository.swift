@@ -20,8 +20,8 @@ class TokyuBusStopRepository: BusStopRepository {
 
             if let data = data {
                 do {
-                    let stopsResponse = try decoder.decode([StopsResponse].self, from: data)
-                    promise.success(stopsResponse[0].stops)
+                    let stopsResponse = try decoder.decode(StopsResponse.self, from: data)
+                    promise.success(stopsResponse.stops)
                 } catch {
                     print("error", error)
                 }

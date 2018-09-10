@@ -5,8 +5,7 @@ import BrightFutures
 
 @testable import busping
 class SelectBusStopTableViewControllerSpec: QuickSpec {
-    var fakeKuruyoHTTP: FakeKuruyoHTTP!
-    var busStopRepository: BusStopRepository!
+    var busStopRepository: BusStopRepoSpy!
     var routerSpy: NavigationRouterSpy!
     var vc: SelectBusStopTableViewController!
     
@@ -19,13 +18,16 @@ class SelectBusStopTableViewControllerSpec: QuickSpec {
     override func spec() {
         
         beforeEach {
-            self.fakeKuruyoHTTP = FakeKuruyoHTTP()
-            self.busStopRepository = TokyuBusStopRepository(http: self.fakeKuruyoHTTP)
+            self.busStopRepository = BusStopRepoSpy()
         }
         
         describe("the select bus stop tableview controller") {
             context("when I arrive on the screen") {
                 it("should display a list of bus stops") {
+                    let promise = Promise<[Stop]?, NSError>()
+                    self.busStopRepository.allStops_returnValue = promise.future
+                    promise.success([Stop(name: "恵比寿駅")])
+
                     self.createViewController()
 
                     expect(self.vc.hasLabel(withText: "恵比寿駅")).toEventually(beTrue())
@@ -35,6 +37,9 @@ class SelectBusStopTableViewControllerSpec: QuickSpec {
 
         describe("selecting a to and from stop") {
             it("should display starting stop") {
+                let promise = Promise<[Stop]?, NSError>()
+                self.busStopRepository.allStops_returnValue = promise.future
+                promise.success([Stop(name: "恵比寿駅")])
                 self.createViewController()
                 
             
@@ -45,6 +50,9 @@ class SelectBusStopTableViewControllerSpec: QuickSpec {
             }
             
             it("should display destination stop") {
+                let promise = Promise<[Stop]?, NSError>()
+                self.busStopRepository.allStops_returnValue = promise.future
+                promise.success([Stop(name: "恵比寿駅"),  Stop(name: "守屋図書館")])
                 self.createViewController()
                 
                 
@@ -57,6 +65,9 @@ class SelectBusStopTableViewControllerSpec: QuickSpec {
             
             context("when I tap on a selected stop again") {
                 it("should no longer display the starting stop") {
+                    let promise = Promise<[Stop]?, NSError>()
+                    self.busStopRepository.allStops_returnValue = promise.future
+                    promise.success([Stop(name: "恵比寿駅"), Stop(name: "守屋図書館")])
                     self.createViewController()
                     
                     
@@ -69,6 +80,9 @@ class SelectBusStopTableViewControllerSpec: QuickSpec {
                 }
                 
                 it("should no longer display the destination stop") {
+                    let promise = Promise<[Stop]?, NSError>()
+                    self.busStopRepository.allStops_returnValue = promise.future
+                    promise.success([Stop(name: "恵比寿駅"), Stop(name: "守屋図書館")])
                     self.createViewController()
                     
                     
@@ -85,6 +99,10 @@ class SelectBusStopTableViewControllerSpec: QuickSpec {
 
         describe("navigation bar") {
             it("should navigate to the route detail screen when next is tapped") {
+                let promise = Promise<[Stop]?, NSError>()
+                self.busStopRepository.allStops_returnValue = promise.future
+                promise.success([Stop(name: "恵比寿駅"), Stop(name: "守屋図書館")])
+
                 self.createViewController()
 
                 waitUntil { done in
@@ -96,7 +114,7 @@ class SelectBusStopTableViewControllerSpec: QuickSpec {
                         self.vc.perform(self.vc.navigationItem.rightBarButtonItem!.action)
 
                         expect(self.routerSpy.showRouteDetailScreen_lineArg).to(equal("恵32"))
-                        expect(self.routerSpy.showRouteDetailScreen_toStopArg.name).to(equal("下通五丁目"))
+                        expect(self.routerSpy.showRouteDetailScreen_toStopArg.name).to(equal("守屋図書館"))
                         expect(self.routerSpy.showRouteDetailScreen_fromStopArg.name).to(equal("恵比寿駅"))
 
                         done()
