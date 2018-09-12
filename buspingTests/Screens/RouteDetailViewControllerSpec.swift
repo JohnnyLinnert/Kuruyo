@@ -10,7 +10,11 @@ class RouteDetailViewControllerSpec: QuickSpec {
     var busLocationRepoSpy: BusLocationRepoSpy!
 
     func createViewController() {
-        self.vc = RouteDetailViewController(busLocationRepo: self.busLocationRepoSpy)
+        self.vc = RouteDetailViewController(
+            busLocationRepo: self.busLocationRepoSpy,
+            fromStop: Stop(name: "恵比寿駅"),
+            toStop: Stop(name: "用賀駅")
+        )
     }
 
     override func spec() {
@@ -27,9 +31,8 @@ class RouteDetailViewControllerSpec: QuickSpec {
 
 
                 self.createViewController()
-                
 
-//                expect(self.vc.hasLabel(withText: "Your bus is 3 stops away")).toEventually(beTrue())
+                expect(self.vc.hasLabel(withText: "The next bus is currently at 恵比寿駅 which is 3 stops away.")).toEventually(beTrue())
             }
         }
     }

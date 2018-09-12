@@ -31,7 +31,7 @@ class NavigationRouter: Router {
     func showRouteDetailScreen(fromStop: Stop, toStop: Stop, line: String) {
         let http = KuruyoHTTP()
         let busLocationRepo = TokyuBusLocationRepository(http: http)
-        let routeDetailViewCtrl = RouteDetailViewController(busLocationRepo: busLocationRepo)
+        let routeDetailViewCtrl = RouteDetailViewController(busLocationRepo: busLocationRepo, fromStop: fromStop, toStop: toStop)
         rootViewController?.pushViewController(routeDetailViewCtrl, animated: true)
     }
 }

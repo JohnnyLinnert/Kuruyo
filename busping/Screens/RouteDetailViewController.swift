@@ -4,9 +4,13 @@ import UIKit
 class RouteDetailViewController: UIViewController {
     private let busLocationRepo: BusLocationRepository
     private var label: UILabel!
+    private let fromStop: Stop
+    private let toStop: Stop
 
-    init(busLocationRepo: BusLocationRepository) {
+    init(busLocationRepo: BusLocationRepository, fromStop: Stop, toStop: Stop) {
         self.busLocationRepo = busLocationRepo
+        self.fromStop = fromStop
+        self.toStop = toStop
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -28,7 +32,7 @@ class RouteDetailViewController: UIViewController {
             label.leftAnchor.constraint(equalTo: view.layoutMarginsGuide.leftAnchor),
             label.rightAnchor.constraint(equalTo: view.layoutMarginsGuide.rightAnchor)
         ])
-        busLocationRepo.closestBusLocation(fromStop: Stop(name: "守屋図書館"), toStop: Stop(name: "恵比寿駅"), line: "恵32").onSuccess { location in
+        busLocationRepo.closestBusLocation(fromStop: fromStop, toStop: toStop, line: "恵32").onSuccess { location in
             if let currentLocation = location {
                 self.label.text = "The next bus is currently at \(currentLocation.stop.name) which is \(currentLocation.numberAway) stops away."
             }
