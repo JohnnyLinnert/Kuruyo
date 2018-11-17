@@ -18,6 +18,8 @@
 		B1D70D4B21453AA700F285D2 /* BusLocationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D70D4A21453AA700F285D2 /* BusLocationRepository.swift */; };
 		B1D70D4D21453FCA00F285D2 /* BusLocationRepoSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D70D4C21453FCA00F285D2 /* BusLocationRepoSpy.swift */; };
 		B1D70D4F2145421300F285D2 /* BusLocationRepoSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D70D4E2145421300F285D2 /* BusLocationRepoSpec.swift */; };
+		B1FD482F219FDBBD00E64881 /* AutomaticReloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FD482E219FDBBD00E64881 /* AutomaticReloader.swift */; };
+		B1FD4831219FDDB700E64881 /* AutomaticReloaderSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FD4830219FDDB700E64881 /* AutomaticReloaderSpy.swift */; };
 		B2024BC7206744E200148E47 /* SelectBusLineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2024BC6206744E200148E47 /* SelectBusLineTableViewController.swift */; };
 		B2024BC92067458000148E47 /* SelectBusLineTableViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2024BC82067458000148E47 /* SelectBusLineTableViewControllerSpec.swift */; };
 		B2024BCB206747C500148E47 /* TestSetupExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2024BCA206747C500148E47 /* TestSetupExtensions.swift */; };
@@ -65,6 +67,8 @@
 		B1D70D4A21453AA700F285D2 /* BusLocationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusLocationRepository.swift; sourceTree = "<group>"; };
 		B1D70D4C21453FCA00F285D2 /* BusLocationRepoSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusLocationRepoSpy.swift; sourceTree = "<group>"; };
 		B1D70D4E2145421300F285D2 /* BusLocationRepoSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusLocationRepoSpec.swift; sourceTree = "<group>"; };
+		B1FD482E219FDBBD00E64881 /* AutomaticReloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomaticReloader.swift; sourceTree = "<group>"; };
+		B1FD4830219FDDB700E64881 /* AutomaticReloaderSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomaticReloaderSpy.swift; sourceTree = "<group>"; };
 		B2024BC6206744E200148E47 /* SelectBusLineTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBusLineTableViewController.swift; sourceTree = "<group>"; };
 		B2024BC82067458000148E47 /* SelectBusLineTableViewControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBusLineTableViewControllerSpec.swift; sourceTree = "<group>"; };
 		B2024BCA206747C500148E47 /* TestSetupExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestSetupExtensions.swift; sourceTree = "<group>"; };
@@ -149,6 +153,7 @@
 				B1D70D4C21453FCA00F285D2 /* BusLocationRepoSpy.swift */,
 				B1D70D4E2145421300F285D2 /* BusLocationRepoSpec.swift */,
 				B11574D52146C64400CE392B /* BusStopRepoSpy.swift */,
+				B1FD4830219FDDB700E64881 /* AutomaticReloaderSpy.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -185,6 +190,7 @@
 				B120C8B420B8F846006BDB99 /* KuruyoHTTP.swift */,
 				B121F6FF20B904E90095FC7F /* StopsResponse.swift */,
 				B1D70D4A21453AA700F285D2 /* BusLocationRepository.swift */,
+				B1FD482E219FDBBD00E64881 /* AutomaticReloader.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -298,7 +304,6 @@
 				TargetAttributes = {
 					B228FF711D9AC86D004E157E = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 7K9KLB5QXN;
 						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -450,6 +455,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2BBC26720AFE84B00EAD13B /* BusStopRepository.swift in Sources */,
+				B1FD482F219FDBBD00E64881 /* AutomaticReloader.swift in Sources */,
 				B2024BC7206744E200148E47 /* SelectBusLineTableViewController.swift in Sources */,
 				B2287B5D2026CE5400375B68 /* BusLocations.swift in Sources */,
 				B1D70D492145390700F285D2 /* RouteDetailViewController.swift in Sources */,
@@ -472,6 +478,7 @@
 			files = (
 				B11574D62146C64400CE392B /* BusStopRepoSpy.swift in Sources */,
 				B250FDA42082FAD9000CBAAB /* AppDelegateSpec.swift in Sources */,
+				B1FD4831219FDDB700E64881 /* AutomaticReloaderSpy.swift in Sources */,
 				B1D70D4D21453FCA00F285D2 /* BusLocationRepoSpy.swift in Sources */,
 				B250FDAA208307D4000CBAAB /* NavigationRouterSpy.swift in Sources */,
 				B1D70D47214538FB00F285D2 /* RouteDetailViewControllerSpec.swift in Sources */,
@@ -636,7 +643,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = busping/Application/busping.entitlements;
-				DEVELOPMENT_TEAM = 7K9KLB5QXN;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = busping/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.johnnylinnert.busping;
@@ -653,7 +660,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = busping/Application/busping.entitlements;
-				DEVELOPMENT_TEAM = 7K9KLB5QXN;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = busping/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.johnnylinnert.busping;
